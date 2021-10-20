@@ -7,9 +7,9 @@ public class Run {
 		
 		Practice2 p2 = new Practice2();
 		
-		p2.methodQ1();
-		p2.methodQ2();
-		p2.methodQ3();
+//		p2.methodQ1();
+//		p2.methodQ2();
+//		p2.methodQ3();
 		p2.methodQ4();
 		
 	}

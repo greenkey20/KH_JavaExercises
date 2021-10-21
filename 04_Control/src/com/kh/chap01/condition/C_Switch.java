@@ -5,15 +5,14 @@ import java.util.Scanner;
 public class C_Switch { // 클래스 C_Switch 영역 시작
 	
 	/* switch문
-	 * 위 -> 아래로 순차적으로 실행(x) 해당 값 case로 jump/pass(o)
-	 * 
-	 * 동등비교 -> 해당 case로 엘리베이터 타고 내려감
+	 * 위 -> 아래로 순차적으로 실행(o) 해당 값 case로 jump/pass(x); 단, c언어 등에서는 goto를 통해 진짜 jump하는 코드 있긴 함
+	 * 동등비교 -> 해당 case(층수) 버튼 누르고 (다른 층들 거쳐 해당 case 층으로) 엘리베이터 타고 내려감
 	 * 
 	 * 표현식: 
 	 * switch(아래에 기술할 값들과 동등 비교를 할 대상자) {
 	 * switch(정수, 문자, 문자열) {
 	 * 
-	 *  case 값1 : 대상자(값) == 값1이 true일 경우 실행할 코드1; // 지금까지 배운 '값' = literal값..
+	 *  case 값1 : 대상자(값) == 값1이 true일 경우 실행할 코드1; // 지금까지 배운 '값' = literal값; Java 최신 version에서만 변수명 입력 가능 
 	 *  case 정수, 문자, 문자열 : 실행할 코드1; // 동등 비교 결과가 false인 경우 다음 case로 넘어감
 	 *  	break; // switch 영역을 빠져나감
 	 *  case 값2 : 대상자 == 값2가 true일 경우 실행할 코드2;

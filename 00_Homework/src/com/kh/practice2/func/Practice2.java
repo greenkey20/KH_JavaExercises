@@ -222,7 +222,7 @@ public class Practice2 { // 2021.10.18(월) 숙제2 풀이 클래스 영역 시�
 		sc.nextLine(); // 다음 nextLine() 메서드를 사용해서 문제 없이 문자(열) 입력받기 위해, 이전 nextDouble() 사용 후 버퍼공간에 남아있는 개행문자 없애줌
 		
 		System.out.print("연산 기호 하나를 입력하세요 : ");
-		char operator = sc.nextLine().charAt(0);
+		char operator = sc.nextLine().charAt(0); // 사용자에게 입력받는 연산자
 		
 //		double add = num1 + num2;
 //		double subtract = num1 - num2;
@@ -230,13 +230,17 @@ public class Practice2 { // 2021.10.18(월) 숙제2 풀이 클래스 영역 시�
 //		double divide = num1 / num2;
 //		double modulo = num1 % num2;
 		
-		double result = 0.0; // 기본(?) 초기값이 0.0이므로, result = 0.0으로 초기화할 필요는 없음..
+		double result = 0.0; // 연산의 결과값을 담을 변수; double형 자료의 기본(?) 초기값이 0.0이므로, result = 0.0으로 초기화할 필요는 없음..
 		
-//		if (!(operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%') || num1 <= 0.0 || num2 <= 0.0) {
+		// 방법1)
+		// 조건식에 넣어야 할 것
+		// 1. num1과 num2가 0보다 커야한다(양수)
+		// 2. +, -, *, /, % 5개의 연산자가 정확히 입력되어야 한다
+//		if (!(operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%') || num1 <= 0.0 || num2 <= 0.0) { // 아래 행과 동치인 표현
 		if ((num1 <= 0 || num2 <= 0) || (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%')) { 
 			System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다.");
 		} else {
-			if (operator == '+') result = num1 + num2;
+			if (operator == '+') result = num1 + num2; // 실행 codes 짧을 때 중괄호{} 생략 및 1줄로 표기
 			else if (operator == '-') result = num1 - num2;
 			else if (operator == '*') result = num1 * num2;
 			else if (operator == '/') result = (double)num1 / num2; // num1을 double로 형 변환 -> 피연산자들은 같은 자료형이어야 하므로 num2도 double로 자동형변환
@@ -254,6 +258,25 @@ public class Practice2 { // 2021.10.18(월) 숙제2 풀이 클래스 영역 시�
 //			System.out.println(num1 + " / " + num2 + " = " + divide);
 //		} else {
 //			System.out.println(num1 + " % " + num2 + " = " + modulo);
+//		}
+		
+		// 방법2) 2021.10.23(토) 복습 시 switch문 사용해봄
+//		if (num1 <= 0 || num2 <= 0 || (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%')) {
+//			System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다.");
+//		} else {
+//			switch(operator) {
+//			case '+' : result = num1 + num2;
+//				break;
+//			case '-' : result = num1 - num2;
+//				break;
+//			case '*' : result = num1 * num2;
+//				break;
+//			case '/' : result = num1 / num2;
+//				break;
+//			case '%' : result = num1 % num2;
+//				break;
+//			}
+//			System.out.printf("%d %c %d = %.3f", num1, operator, num2, result);
 //		}
 		
 	} // 4번 문제 풀이 메서드 영역 끝

@@ -2,7 +2,7 @@ package com.kh.practice2.func;
 
 import java.util.Scanner;
 
-public class Practice2 { // 숙제2 풀이 클래스 영역 시작
+public class Practice2 { // 2021.10.18(월) 숙제2 풀이 클래스 영역 시작
 	
 	public void methodQ1() { // 1번 문제 풀이 메서드 영역 시작
 		
@@ -17,6 +17,8 @@ public class Practice2 { // 숙제2 풀이 클래스 영역 시작
 //		입력 : 13
 		
 //		true
+		
+		// 출제 의도: 조건문 + ||(or)
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -37,35 +39,78 @@ public class Practice2 { // 숙제2 풀이 클래스 영역 시작
 //		}
 		
 		// 방법2)
-		System.out.print("첫번째 정수를 입력하세요 : ");
-		int num1 = sc.nextInt();
-		
-		System.out.print("두번째 정수를 입력하세요 : ");
-		int num2 = sc.nextInt();
-		
-		System.out.print("세번째 정수를 입력하세요 : ");
-		int num3 = sc.nextInt();
-		
-		if (num1 < num2) {
-			if (num3 <= num1 || num2 < num3) {
-				System.out.println("true");
-			} else {
-				System.out.println("false");
-			}
-		} else {
-			System.out.println("false");
-		}
+//		System.out.print("첫번째 정수를 입력하세요 : ");
+//		int num1 = sc.nextInt();
+//		
+//		System.out.print("두번째 정수를 입력하세요 : ");
+//		int num2 = sc.nextInt();
+//		
+//		System.out.print("세번째 정수를 입력하세요 : ");
+//		int num3 = sc.nextInt();
+//		
+//		if (num1 < num2) {
+//			if (num3 <= num1 || num2 < num3) {
+//				System.out.println("true");
+//			} else {
+//				System.out.println("false");
+//			}
+//		} else {
+//			System.out.println("false");
+//		}
 		
 		// 방법3) 손민성님 ideas
 		// num1 >= num2인 경우 "조건에 맞지 않습니다" 출력..
+//		System.out.print("첫번째 정수를 입력하세요 : ");
+//		int num1 = sc.nextInt();
+//		
+//		System.out.print("두번째 정수를 입력하세요 : ");
+//		int num2 = sc.nextInt();
+//		
+//		System.out.print("세번째 정수를 입력하세요 : ");
+//		int num3 = sc.nextInt();
+//		
+//		if (num1 >= num2) {
+//			System.out.println("조건에 맞지 않습니다");
+//		} else {
+//			if (num3 <= num1 || num2 < num3) {
+//				System.out.println("true");
+//			} else {
+//				System.out.println("false");
+//			}
+//		}
 		
-		System.out.println();
-//		sc.close();
+		// 방법4) while문 등 추가 사용하여 2021.10.23(토) 복습 시 보완
+		// num1 < num2가 아닐 때 사용자로부터 정수 다시 입력 받기
+		
+		while (true) {
+			System.out.print("첫번째 정수를 입력하세요 : ");
+			int num1 = sc.nextInt();
+			
+			System.out.print("두번째 정수를 입력하세요 : ");
+			int num2 = sc.nextInt();
+			
+			System.out.print("세번째 정수를 입력하세요 : ");
+			int num3 = sc.nextInt();
+			
+			if (num1 >= num2) {
+				System.out.println("조건에 맞지 않습니다 - 첫번째 정수와 두번째 정수를 다시 입력해주세요(첫번째 정수 < 두번째 정수)");
+				continue;
+			} else {
+				if (num3 <= num1 || num2 < num3) {
+					System.out.println("true");
+					break;
+				} else {
+					System.out.println("false");
+					break;
+				}
+			}
+		}
+		
 	} // 1번 문제 풀이 메서드 영역 끝
 	
 	public void methodQ2() { // 2번 문제 풀이 메서드 영역 시작
 		
-		System.out.println("[2번 문제: 3개의 정수값 비교]");
+		System.out.println("\n[2번 문제: 3개의 정수값 비교]");
 //		2. 3개의 수를 키보드로 입력 받아 입력 받은 수가 모두 같으면 true, 아니면 false를 출력하세요.
 		
 //		ex.
@@ -74,6 +119,8 @@ public class Practice2 { // 숙제2 풀이 클래스 영역 시작
 //		입력3 : 5
 		
 //		false
+		
+		// 출제 의도: 조건문 + &&(and)
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -116,6 +163,8 @@ public class Practice2 { // 숙제2 풀이 클래스 영역 시작
 //		ex.
 //		숫자를 한 개 입력하세요 : -8
 //		양수만 입력해주세요.
+		
+		// 출제 의도: 홀/짝수 조건식 복습
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -165,7 +214,7 @@ public class Practice2 { // 숙제2 풀이 클래스 영역 시작
 		System.out.print("첫 번째 정수를 입력하세요 : ");
 		int num1 = sc.nextInt();
 		// 2021.10.19 오전 수업 선생님과 수정/작성한 if문에서는 int형으로 받아야 함..
-		// 연산 결과를 실수형(double)로 출력해야 하기 때문에 정수 입력받을 때 double로 받음 + int로 받았을 때 예를 들어 1 / 4 = 0.0이 출력 vs double로 받았을 때 1 / 4 = 0.25 출력
+		// 2021.10.18 과제 수행 시, 연산 결과를 실수형(double)로 출력해야 하기 때문에 정수 입력받을 때 double로 받음 + int로 받았을 때 예를 들어 1 / 4 = 0.0이 출력 vs double로 받았을 때 1 / 4 = 0.25 출력
 		
 		System.out.print("두 번째 정수를 입력하세요 : ");
 		int num2 = sc.nextInt();
@@ -181,24 +230,18 @@ public class Practice2 { // 숙제2 풀이 클래스 영역 시작
 //		double divide = num1 / num2;
 //		double modulo = num1 % num2;
 		
-		double result; // 기본(?) 초기값이 0.0이므로, result = 0.0으로 초기화할 필요는 없음..
+		double result = 0.0; // 기본(?) 초기값이 0.0이므로, result = 0.0으로 초기화할 필요는 없음..
 		
 //		if (!(operator == '+' || operator == '-' || operator == '*' || operator == '/' || operator == '%') || num1 <= 0.0 || num2 <= 0.0) {
 		if ((num1 <= 0 || num2 <= 0) || (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%')) { 
 			System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다.");
 		} else {
-			if (operator == '+') {
-				result = num1 + num2;
-			} else if (operator == '-') {
-				result = num1 - num2;
-			} else if (operator == '*') {
-				result = num1 * num2;
-			} else if (operator == '/') {
-				result = (double)num1 / num2; // num1을 double로 형 변환 -> 피연산자들은 같은 자료형이어야 하므로 num2도 double로 자동형변환
-			} else {
-				result = num1 % num2;
-			}
-			System.out.printf("%d %c %d = %.3f", num1, operator, num2, result);
+			if (operator == '+') result = num1 + num2;
+			else if (operator == '-') result = num1 - num2;
+			else if (operator == '*') result = num1 * num2;
+			else if (operator == '/') result = (double)num1 / num2; // num1을 double로 형 변환 -> 피연산자들은 같은 자료형이어야 하므로 num2도 double로 자동형변환
+			else result = num1 % num2;
+			System.out.printf("%d %c %d = %.3f", num1, operator, num2, result); // printf = 출력 시 formatting 해주는 메소드
 		}
 		
 //		} else if (operator == '+') { // 출력 양식 반복됨 -> 수정,유지,보수 등 번거로움..
@@ -213,7 +256,6 @@ public class Practice2 { // 숙제2 풀이 클래스 영역 시작
 //			System.out.println(num1 + " % " + num2 + " = " + modulo);
 //		}
 		
-		sc.close();
 	} // 4번 문제 풀이 메서드 영역 끝
 
 } // 숙제2 풀이 클래스 영역 끝

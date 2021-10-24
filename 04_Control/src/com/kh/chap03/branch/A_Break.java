@@ -13,13 +13,14 @@ public class A_Break { // 클래스 영역 시작
 	 */
 	
 	public void method1() { // method1 영역 시작
-		// 매번 반복적으로 새롭게 발생되는 랜덤값 출력(1~100) -> 무한하게(for 또는 while)
+		// 매번 반복적으로 새롭게 발생되는 랜덤값(1~100) "무한하게(for 또는 while)" 출력
 		// 방법1) for( ; ; )
 		// 방법2) while(true)
 		
 		// 그 랜덤값이 홀수일 경우(=조건 -> 조건문 사용) 반복문을 빠져나가게 할 것
 		
-		for( ; ;) { // 랜덤값이 홀수일 때까지 무한 반복
+		// 방법1)
+		for ( ; ;) { // 랜덤값이 홀수일 때까지 무한 반복
 			int random = (int)(Math.random() * 100) + 1; 
 			// Math.random() = 0.00 ~ 0.99999
 			// Math.random() * 100 = 0.00 ~ 99.9999
@@ -27,9 +28,22 @@ public class A_Break { // 클래스 영역 시작
 			// (int)(Math.random() * 100) + 1 = 1 ~ 100
 			
 			if (random % 2 == 1) {
-				break;
+				System.out.println("프로그램을 종료합니다(random : " + random + ")");
+				break; // 가장 가까운 반복문(여기서는 for문)을 빠져나감
 			} else {
-				System.out.println("random : " + random); // 결과물 수 = 홀수 random 값 나오기 전/if문 빠져나오기 전 for문이 돈 횟수
+				System.out.println("random : " + random); // 결과물 수 = 홀수 random 값 나오기/if문 조건식 걸리기 전 for문이 돈 횟수
+			}
+		}
+		
+		// 방법2)
+		while (true) {
+			int random = (int)(Math.random() * 100) + 1;
+			
+			if (random % 2 == 1) {
+				System.out.println("프로그램을 종료합니다(random : " + random + ")");
+				break; // 가장 가까운 반복문(여기서는 while문)을 빠져나감
+			} else {
+				System.out.println("random : " + random); // 결과물 수 = 홀수 random 값 나오기/if문 조건식 걸리기 전 while문이 돈 횟수
 			}
 		}
 		

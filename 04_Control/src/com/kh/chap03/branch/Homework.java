@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Homework {
 	
-	// 시용할 수 있는 도구들: print문들, Scanner, operators, for, while, do-while, if, else, else if, switch, break, continue, return, methods() 조금.. 
+	// 현재 내가 사용할 수 있는 도구들: print문들, Scanner, operators, for, while, do-while, if, else, else if, switch, break, continue, return, methods() 조금.. 
 	
 	public void homework1() { // 2021.10.20 숙제1번 메소드 영역 시작
 		// 연산자와 정수 2개를 입력받고, 입력된 연산자에 따라 알맞은 결과를 출력
@@ -16,7 +16,7 @@ public class Homework {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		while (true) { // while 영역 시작; 조건식 = true -> 아래 코드를 실행 -> 프로그램 종료 조건 만족하기 전까지 계속 실행/무한반복; 초기식, 증감식 안 씀;
+		while (true) { // while 영역 시작; 조건식 = true -> 아래 코드를 실행 -> 프로그램 종료 조건 만족하기 전까지 계속 실행/무한반복; 초기식, 증감식 안 씀
 			
 			System.out.print("연산자 하나를 입력하세요 > "); // 사용자로부터 연산자 입력받기
 			String str = sc.next(); // "exit" 문자열을 받을 경우를 위해 next() 메소드를 활용하여 String 자료형에 저장함
@@ -35,6 +35,7 @@ public class Homework {
 			System.out.print("두 번째 정수를 입력하세요 > "); // 사용자로부터 두번째 정수(피연산자2) 입력받음
 			int num2 = sc.nextInt(); // 정수형 변수로 받음
 			
+			// "연산자가 나누기이면서 두 번째 정수가 0으로 들어오면" 조건은 아래 swith문 > case "/"에서 작성 가능(강사님 idea)
 //			if (str.equals("/") && num2 == 0) { // 연산자가 '/'(나누기)이고 두번째 정수(num2)가 0인 경우
 //				System.out.println("0으로 나눌 수 없습니다, 다시 입력해주세요");
 //				continue; // 가장 가까운 반복문(위 while문(증감식 없으니까 조건식 부분)으로 돌아가기 -> 사용자로부터 연산자와 정수 2개 다시 입력받음
@@ -51,7 +52,7 @@ public class Homework {
 				break; // 해당 switch문을 빠져나가는 break문
 			case "/" : if (num2 == 0) {
 							System.out.println("0으로 나눌 수 없습니다, 다시 입력해주세요");
-							continue; // 이 continue로 가장 가까운 while문을 빠져나감 -> 이 while문은 무한반복 -> 이 continue 쓰면 switch 아래 printf 출력 안 됨
+							continue; // 이 continue에 의해 가장 가까운 while문으로 빠져나감 -> 이 while문은 무한반복 -> 이 continue 쓰면 switch 아래 printf 출력 안 됨
 					   } else {
 					   result = (double)num1 / num2; // 나눗셈 결과가 소수점까지 정확하게 표현되도록 피연산자 하나를 double형으로 강제형변환 시킴
 					   }
@@ -64,7 +65,7 @@ public class Homework {
 			
 			System.out.printf("%d %s %d = %.3f\n", num1, str, num2, result); // 
 					
-//			break; // while문 밖으로 나가기 -> 단 이 문제에서는 사용자가 exit 입력할 때까지 계속 반복되는 프로그램임
+//			break; // while문 밖으로 나가기 -> 단 이 문제에서는 사용자가 exit 입력할 때까지 계속 반복되는 프로그램이므로, 이 break로 프로그램 끝내는 것은 문제 조건에 맞지 않음
 			
 		} // while 영역 끝
 		
@@ -107,16 +108,29 @@ public class Homework {
 //			i++;
 //		}
 		
-		// 방법3)
+		// 방법3) 강사님 설명
 		int sum = start; // int형 변수/공간 sum(합계를 담을 변수)에 우항에 있는 값(사용자가 입력한 시작 숫자 start)을 초기값으로 대입/저장/초기화
 		String str = ""; // 시작 숫자 start를 제외한 나머지 결과값(등차수열의 원소)들을 담을 문자열 str이라는 변수 선언 
 		
 		for (int i = 1; i <= 9; i++) {
 			sum += diff; // 합계를 담을 sum이라는 변수에 diff 값을 더해서 대입
-			str += sum + (" "); // 결과값을 담을 str 변수(문자열)에 sum에 담긴 값(들)을 문자열로 변환하여 대입 e.g. 6" " + 9" "
+			str += sum + " "; // 결과값을 담을 str 변수(문자열)에 sum에 담긴 값(들)을 문자열로 변환하여 대입 e.g. 6" " + 9" "
 		}
 		
 		System.out.println(start + " " + str); // 결과적으로 String(문자열) 출력; 시작 숫자 start에 공백을 붙인 뒤 반복문에서 완성한 결과값 str을 붙여서 출력
+		
+		// 방법4) 학생1
+//		for (int i = 0; i < 10; i++) {
+//			System.out.print(start + " ");
+////			System.out.print(i + "번째 출력 : " + start + " \n"); // i값 확인하며 출력
+//			start += diff;
+//		}
+		
+		// 방법5) 학생2
+//		for (int i = 0; i < 10; i++) {
+//			int result = start + diff * i;
+//			System.out.print(result + " ");
+//		}
 		
 	} // 2021.10.20 숙제2번 메소드 영역 시작
 

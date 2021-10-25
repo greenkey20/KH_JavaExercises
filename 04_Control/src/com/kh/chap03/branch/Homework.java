@@ -15,6 +15,7 @@ public class Homework {
 		System.out.println("[2021.10.20자 숙제1번: 2항연산자 계산]");
 		
 		Scanner sc = new Scanner(System.in);
+		// 
 		
 		while (true) { // while 영역 시작; 조건식 = true -> 아래 코드를 실행 -> 프로그램 종료 조건 만족하기 전까지 계속 실행/무한반복; 초기식, 증감식 안 씀
 			

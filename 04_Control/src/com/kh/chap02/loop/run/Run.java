@@ -8,8 +8,8 @@ public class Run {
 	
 	public static void main(String[] args) {
 		A_For a = new A_For(); // 클래스 A_For에 a라는 별명을 붙여 사용하겠다
-//		a.method1(); 
-//		a.method2();
+//		a.method1(); // "안녕하세요" 무한반복 메소드
+		a.method2();
 //		a.gugudan();
 		
 //		String str = "안녕";
@@ -17,7 +17,8 @@ public class Run {
 		// 정수끼리 할 수 있는 기능 = 산술연산(+, -, *, /, %)
 		// 문자열끼리 할 수 있는 기능 = +, equals. (o) -, *, /, % (x)
 		
-//		a.method5();
+//		a.method3();
+//		a.methodStars();
 		
 		B_While b = new B_While();
 //		b.method1();
@@ -30,7 +31,7 @@ public class Run {
 		C_DoWhile c = new C_DoWhile();
 //		c.method1();
 //		c.method2();
-		c.method3();
+//		c.method3();
 		
 	}
 

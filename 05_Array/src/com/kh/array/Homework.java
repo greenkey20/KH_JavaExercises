@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Homework { // 클래스 영역 시작
 	
 	// 이번 숙제까지가 절차적/구조적(structural, 컴퓨터가 생각하는대로) 프로그래밍/컴퓨터처럼 생각하기 vs 사람처럼 생각(객체지향 프로그래밍)
+	// 도움을 받아서 할 수 있으면 됨..
 
 	public void exercise1() { // exercise1 메소드 영역 시작
 		
@@ -86,7 +87,7 @@ public class Homework { // 클래스 영역 시작
 			System.out.print(nums[i] + " ");
 		}
 		
-		Arrays.sort(nums); // Arrays 클래스에서 제공하는 sort() 정렬하는 기능 활용
+		Arrays.sort(nums); // Arrays 클래스에서 제공하는 sort() 정렬(올림차순)하는 기능 활용
 		
 		/* input -> 메소드 = 마법상자/클래스 안에 만들어놓은 함수/멤버함수 -> output
 		 * 

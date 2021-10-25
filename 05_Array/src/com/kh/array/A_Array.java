@@ -10,7 +10,7 @@ public class A_Array { // 클래스 영역 시작
 	/* 변수(variable): 메모리공간(RAM, 기억장치)에 데이터값을 저장하기 위한 공간
 	 * 특징
 	 * 1. 값이 바뀔 수 있다
-	 * 2. 변수마다의 크기가 정해져있다
+	 * 2. 변수(자료형)마다의 크기가 정해져있다
 	 * 3. 형 변환
 	 * 4. 자료형이 지정되어 있다
 	 * 5. 한 블록 내에 선언은 한 번 밖에 못한다; code block 안에서 선언+사용된다..
@@ -20,6 +20,7 @@ public class A_Array { // 클래스 영역 시작
 	
 	/* 배열(array): 하나의 공간에, "같은 자료형의" 여러 개의 값들을 담을 수 있음
 	 *  - 배열 선언 시 앞에 자료형 써줘야 함
+	 * 배열 = 순서가 있는 공간 -> 순서가 있음 = index가 있음 -> index가 있는 공간/칸이 만들어짐
 	 * 배열의 각 index("색인, 목록") 자리에 실제 값이 담김 -> index = 배열의 각 방
 	 * index는 0부터 시작 + 같은 크기로 만듦
 	 */
@@ -57,8 +58,8 @@ public class A_Array { // 클래스 영역 시작
 		/* 1. 배열 선언
 		 * 표현법
 		 * 변수 선언: 자료형 변수식별자; e.g. int a; // 정수형 변수 선언
-		 * 배열 선언: (1) 자료형 배열명[]; e.g. int arr[]; // 정수형 배열 선언
-		 * 		   (2) 자료형[] 배열명;(이 방법을 주로 사용) e.g. int[] arr; // 정수형 배열 선언
+		 * 배열 선언: 방법1) 자료형 배열명[]; e.g. int arr[]; // 정수형 배열 선언
+		 * 		   방법2) 자료형[] 배열명;(이 방법을 주로 사용) e.g. int[] arr; // 정수형 배열 선언
 		 *
 		 * 2. 배열 할당: 이 배열에 몇 개의 값이 들어갈지/index 몇 개 쓸지/공간 몇 개 필요한지, 배열의 크기를 정해주는 과정 -> 지정한 갯수만큼 값이 들어갈 공간이 만들어짐
 		 * 표현법
@@ -87,23 +88,27 @@ public class A_Array { // 클래스 영역 시작
 		
 		System.out.println(arr2); // 배열은 참조형 자료인 바, 주소값이 저장되어 있고, 따라서 주소값이 출력됨
 		
-		// 아래와 같이 출력하면 변수 사용과 다름이 없음; 출력 시 반복문 사용 불가
+		// 아래와 같이 출력하면 변수 사용과 다름이 없음; 변수는 출력 시 반복문 사용 불가
 		System.out.println(arr2[0]);
 		System.out.println(arr2[1]);
 		System.out.println(arr2[2]);
 		
 		// 배열의 가장 큰 장점 = 반복문 사용 가능 -> 값 대입
 		for (int i = 0; i < arr1.length; i++) { // i = 0~14일 때 15번 반복
-			arr1[i] = (i + 1); // i번 index 방에 i+1 값을 대입; 괄호는 생략 가능
+			arr1[i] = (i + 1); // i번 index 방에 i+1 값을 대입; 우항 괄호는 생략 가능
 		}
 		
-//		for (int i = 0; i <= arr1.length; i++) { // i = 15일 때 조건식 true -> arr1[15] = 16(arr1 배열의 16번째 방에 16을 대입하고자 함)
+//		for (int i = 0; i <= arr1.length; i++) { // i = 15일 때 조건식 true -> arr1[15] = 16(arr1 배열(방 15개짜리) 16번째 방(없는 방)에 16을 대입하고자 함)
 //												 // -> "array index out of bounds" exception(오류) 발생 + "Index 15 out of bounds for length 15"라고 상세한 이유 알려줌
 //			arr1[i] = (i + 1); // i번 index 방에 i+1 값을 대입
 //		}
 		
 		for (int i = 0; i <= (arr1.length - 1); i++) { // i = 0~14일 때 15번 반복
 			System.out.println(arr1[i]);
+		}
+		
+		for (int i = 0; i < arr2.length; i++) { // i = 0~4일 때 5번 반복
+			System.out.println(arr2[i]);
 		}
 		
 	} // method1 영역 끝
@@ -148,8 +153,8 @@ public class A_Array { // 클래스 영역 시작
 		names[29] = "허지만";
 
 //		names[100] = "이승철"; // 빨간줄 안 뜸 -> 문법적으로는 맞게 썼음/문법은 틀린 것 없음
-		// 실행시키면 오류 이유 알려줌: ArrayIndexOutOfBoundsException: Index 100 out of bounds for length 30(배열의 index의 범위를 벗어남); 30개 밖에 방이 없는데 100번 방을 달라고 하니 오류
-		// 오류 위치도 알려줌: at com.kh.array.A_Array.method2(A_Array.java:147); A_Array라는 클래스의 method2의 147행에서 오류가 발생했음
+		// 실행시키면 오류 이유 알려줌: ArrayIndexOutOfBoundsException: Index 100 out of bounds for length 30(배열의 index의 범위를 벗어남); 30개 밖에 방이 없는데 101번 방을 달라고 하니 오류
+		// 오류 위치도 알려줌: at com.kh.array.A_Array.method2(A_Array.java:147); A_Array라는 클래스의 method2의 155행에서 오류가 발생했음
 		
 		System.out.println("names 배열의 첫번째 칸(0번 index)에 저장된 값 : " + names[0]);
 		
@@ -172,7 +177,7 @@ public class A_Array { // 클래스 영역 시작
 //		}
 		
 		// 방법2-b)
-//		for (int i = 1; i < (names.length + 1); i++) {
+//		for (int i = 1; i < (names.length + 1); i++) { // i = 1~30일 때 30번 반복
 //			System.out.printf("출석번호 %d번 %s\n", i, names[i - 1]);
 //		}
 		
@@ -194,7 +199,7 @@ public class A_Array { // 클래스 영역 시작
 			System.out.println("nums 배열의 " + i + "번째 index에 들어가는 값 : " + nums[i]);
 		}
 		
-//		System.out.println(Arrays.toString(nums)); // 위 for을 통해 배열 nums 잘 만들어졌는지 확인하기 위한 출력문
+		System.out.println(Arrays.toString(nums)); // 위 for을 통해 배열 nums 잘 만들어졌는지 확인하기 위한 출력문
 		
 		int min = nums[0]; // 최소값이라는 변수 만들어 nums 배열 첫번째 칸에 있는 값 대입해둠
 		
@@ -226,9 +231,7 @@ public class A_Array { // 클래스 영역 시작
 		for (int i = 0; i < nums.length; i++) {
 			if (nums[i] >= max) {
 				max = nums[i];
-			}
-			
-			if (nums[i] <= min) {
+			} else if (nums[i] <= min) { // else if로 묶어도 되는지 정확히 모르겠음(2021.10.21자 숙제 풀이에서 강사님은 묶어서 하심); else if로 묶으면 2개의 if문으로 썼을 때보다 연산이 1회 적어지는 경우가 생기는 것 같음
 				min = nums[i]; 
 			}
 		}
@@ -260,7 +263,6 @@ public class A_Array { // 클래스 영역 시작
 		 * 참조 자료형: 실제 값이 저장되어있는 주소값을 담고 있는 변수; 참조(reference) 변수
 		 *  - String, 배열(int[], double[], short[]..)
 		 *  - 참조 자료형끼리 동등비교(==)하면 주소값을 비교하므로 내가 일반적으로 원하는/기대하는 값을 얻을 수 없음 -> 문자열끼리 같은지 비교하려면 메소드 '문자열명.equals(비교할 문자열);' 사용
-		 * 
 		 */
 		
 		System.out.println(iArr); // 알아보기 힘든 형태의 주소값이 출력됨
@@ -272,10 +274,10 @@ public class A_Array { // 클래스 영역 시작
 		
 		System.out.println("dArr의 해시코드 값 : " + dArr.hashCode());
 		
-		// 반복문: 0번 index에서부터 마지막 index까지 1씩 증가사면서 순차적으로 출력 가능
+		// 반복문: 0번 index에서부터 마지막 index까지 1씩 증가하면서 순차적으로 출력 가능
 		// 마지막 index의 값 == 배열의 크기 - 1
 		for (int i = 0; i < iArr.length; i++) {
-			System.out.print(iArr[i] + " ");
+			System.out.print(iArr[i] + " "); // 배열에 값 초기화해주지 않은 상태에서 값들은 0(.0)
 		}
 		
 	} // method5 영역 끝
@@ -289,7 +291,7 @@ public class A_Array { // 클래스 영역 시작
 		arr[3] = 20165;
 		arr[4] = 4894;
 		
-//		System.out.println(arr[0] + arr[1] + arr[2] + arr[3] + arr[4]); // 하드코딩
+		System.out.println(arr[0] + arr[1] + arr[2] + arr[3] + arr[4]); // 하드코딩
 		
 		int sum = 0;
 		
@@ -326,7 +328,7 @@ public class A_Array { // 클래스 영역 시작
 		System.out.println("--- sArr이 죽었다 살아났나(=sArr이 가리키고 있는 주소값이 바뀌었나)? ---");
 		System.out.println("죽었다 살아난 sArr의 해시코드 : " + sArr.hashCode());
 		
-		/* 배열은 항상 고유한 주소값이 부여됨(이 명제가 항상 참인 것은 아님; 우리 수업에서는 참이라고 생각해도 됨) -> 주소값이 다르면 다른 배열; 비둘기집 원리 (!= ___ 못 따라적음)
+		/* 배열은 항상 고유한 주소값이 부여됨(이 명제가 항상 참인 것은 아님; 우리 수업에서는 참이라고 생각해도 됨) -> 주소값이 다르면 다른 배열; 비둘기집 원리/hash 충돌 (!= 기존에 생성된 주소와 절대 겹치지 않는다)
 		 * 기존 배열 이름에 '할당'만 다시 하면, 기존에 참조하고 있던 연결이 끊기고 새로운 배열과 연결됨 -> 새로운 곳을 참조
 		 * -> 연결이 끊어진 기존의 배열은 heap 영역의 메모리에 둥둥 떠다니다가 일정 시간이 지나면 garbage collector(쓰레기 모으는 자)가 삭제시켜줌 = 자동 메모리 관리; reference(참조) count(숫자 세는 것)가 0이면 garbage collector가 와서 소중한 메모리 자원을 가져감
 		 */
@@ -339,16 +341,16 @@ public class A_Array { // 클래스 영역 시작
 		String[] arr = null;
 		System.out.println(sArr == arr); // 동등비교는 값을 비교하는 것; 출력 결과 = true
 		
-//		sArr[0] = "수강생 500배"; // 현재 sArr에는 아무 주소도 없음 -> NullPointerException: 가리키는 게 아무 것도 없는데/주소가 없는데 어떻게 접근/대입할래? Cannot store to object array because "sArr" is null
+//		sArr[0] = "수강생 500배"; // 현재 sArr에는 아무 주소도 없음 -> Null Pointer Exception: 가리키는 게 아무 것도 없는데/주소가 없는데 어떻게 접근/대입할래? Cannot store to object array because "sArr" is null
 //		System.out.println(sArr[0]); // 실행해보니 위와 같은 오류 msg 뜸
 //		System.out.println(sArr.hashCode()); // 아무 것도 없는데 hashcode 어떻게 구하니? 오류 msg 뜸
 		
 		/* 기본 자료형에는 없는 개념
-		 * 참조 자료형에는 null이라는 개념 추가 -> 주소값이 있냐, 없냐?
+		 * 참조 자료형에는 null이라는 개념 추가 -> 주소값이 있나, 없나?
 		 * 
 		 * 기본 자료형은 기본값이 
 		 * int a = 0;
-		 * doublt b = 0.0;
+		 * double b = 0.0;
 		 * char c = ' ';
 		 * 
 		 * 참조 자료형의 기본값은 null(주소값이 없다)
@@ -360,9 +362,34 @@ public class A_Array { // 클래스 영역 시작
 //		String str; // String은 참조 자료형이지만, 자동으로 null로 초기화되지는 않음(예외사항)
 //		str = null; // 이렇게 null로 대입해주어야 함
 		String str = null; // 이게 올바른 사용방법
-//		String st = new String(); // 이건 좋지 않은 사용방법
+//		String str = new String(); // 이건 좋지 않은 사용방법
 		System.out.println(str); // 출력 결과 = null
 		
 	} // method7 영역 끝
+	
+	public void method8() {
+		// 배열 선언 및 할당과 동시에 초기화/대입까지 한 번에 끝내는 방법
+		
+		// 방법1)
+		/* arr1[0] = 1; 
+		/* arr1[1] = 2; 
+		/* arr1[2] = 3; 
+		/* arr1[3] = 4; 
+		 */
+		int[] arr1 = new int[] {1, 2, 3, 4};
+		
+		// 방법2)
+		int[] arr2 = {1, 2, 3, 4};
+		String[] students = {"판다", "미피", "해피", "스노크메이든"}; // 하드코딩 = 비효율적.. 실무에서 시간 없을 때 어쩔 수 없이 이렇게 하기도 하지만, 좋은 건 아님
+		students[0] = "혁";
+		
+		for (int i = 0; i <= students.length - 1; i++) {
+			System.out.println(students[i]);
+		}
+		
+		System.out.println("arr1 == arr2 ? : " + (arr1 == arr2)); // false <- arr1과 arr2에는 각기 다른 주소값이 저장되어 있음
+		System.out.println("arr1의 해시코드 : " + arr1.hashCode());
+		System.out.println("arr2의 해시코드 : " + arr2.hashCode());
+	}
 
 } // 클래스 영역 끝

@@ -19,12 +19,12 @@ public class Run {
 //		b.method3();
 //		b.method4();
 //		b.method5();
+		b.method6();
 		
 		C_Switch c = new C_Switch();
 //		c.method1();
 //		c.method2();
-//		c.fruitMarket(); // c. = 해당/관련 클래스의 주소 -> 그 클래스 내 해당 메서드 호출&실행
-		c.method4();
+//		c.fruitMarket(); // c.(참조연산자) = 해당/관련 클래스의 주소 -> 그 클래스 내 해당 메서드 호출&실행
 
 	}
 

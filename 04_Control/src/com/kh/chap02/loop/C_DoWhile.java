@@ -17,8 +17,7 @@ public class C_DoWhile { // 클래스 영역 시작
 	 * 
 	 * while과 do-while 차이점
 	 * while문은 처음 수행할 때도 조건식 검사 후 true여야 실행
-	 * vs d0-while문은 첫 실행은 별도의 조건검사 없이 무조건 1번 실행(일단 해 봐)
-	 * 
+	 * vs do-while문은 첫 실행은 별도의 조건검사 없이 무조건 1번 실행(일단 해 봐)
 	 */
 	
 	public void method1() {
@@ -27,8 +26,9 @@ public class C_DoWhile { // 클래스 영역 시작
 		int num = 1; // 초기식
 		
 		do {
-			System.out.println("무조건 한 번 해봐~");
-		} while(num == 0);
+			System.out.println("무조건 한 번 해봐~"); // 일단 do 안의 내용 먼저 실행
+		} while(num == 0); // 조건식 확인 결과 false인 바, 해당 do-while문 종료
+						   // 조건식 확인 결과가 true이면, do 안의 내용 무한반복됨
 		
 	}
 	
@@ -42,10 +42,12 @@ public class C_DoWhile { // 클래스 영역 시작
 //			System.out.print(i + " ");
 //			i++; // 눈에 잘 보이는/직관적인 표기..
 		} while (i <= 5);
+		
+		System.out.println();
 	}
 	
 	public void method3() { // method3 영역 시작
-		// gugudan()의 while문 버전: 사용자로부터 몇 단인지 입력받고, while문 사용해서 구구단 출력
+		// A-For 클래스 > 메소드 gugudan()(2021.10.19 숙제)의 while문 버전: 사용자로부터 몇 단인지 입력받고, while문 사용해서 구구단 출력
 		// -> 어제 과제로 for문으로 만든 것 while문으로 써보기
 		// -> 같은 결과를 구현하는 경우(if-switch, for-while 등) 내가 더 사용하기 편한 구문 사용하면 됨(성능은 나중에 고려할 것임)
 		

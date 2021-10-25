@@ -19,7 +19,7 @@ public class Run {
 //		b.method3();
 		
 		Homework h = new Homework();
-		h.homework1();
+//		h.homework1();
 		h.homework2();
 		
 	}

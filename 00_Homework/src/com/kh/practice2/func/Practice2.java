@@ -266,7 +266,7 @@ public class Practice2 { // 2021.10.18(월) 숙제2 풀이 클래스 영역 시�
 //		} else {
 //			switch(operator) {
 //			case '+' : result = num1 + num2;
-//				break;
+//				break; // case마다 break; 안 쓰면 다른 연산자들 cases에도 result 변수에 num1 % num2의 값이 저장되므로 원하는 값을 얻을 수 없게 됨 
 //			case '-' : result = num1 - num2;
 //				break;
 //			case '*' : result = num1 * num2;

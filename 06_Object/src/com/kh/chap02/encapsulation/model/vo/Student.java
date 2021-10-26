@@ -11,7 +11,7 @@ public class Student {
 	 */
 	
 	// 앞으로 클래스 안 필드 선언할 때는 private으로 설정
-	private String name;
+	private String name; // 밝은 하늘색 = 멤버변수/필드/인스턴스변수
 	private int age;
 	private char gender;
 	
@@ -35,8 +35,8 @@ public class Student {
 	 */
 	
 	// 이름을 기록 및 수정할 수 있는 메소드; 매개변수로는 문자열만 입력 가능
-	public void setName(String name) { // 반환할 것이 없으므로 void; Student처럼 생긴 객체의 이름을 대입/set하고자 함; 문자열인 name을 매개변수로 입력함
-		this.name = name; // 이(this) 객체 필드에 매개변수로 입력한 값(여기서는 name)을 대입함 
+	public void setName(String name) { // 반환할 것이 없으므로 void; Student처럼 생긴 객체의 이름을 대입/set하고자 함; 문자열인 name을 매개변수로 입력함; 군청색 = 블록{} 안에서만 쓰이는 지역변수
+		this.name = name; // 이(this) 객체 필드에 매개변수로 입력한 값(여기서는 name)을 대입함; this(주황색 = 키워드; '객체'를 의미).가 없으면 name은 모두 중괄호{} 영역 안의 지역변수로 인식됨
 	}
 	
 	// 나이를 기록 및 수정할 수 있는 메소드; 매개변수로는 정수만 입력 가능
@@ -59,8 +59,8 @@ public class Student {
 	 */
 	
 	// 객체의 name(이름)을 반환해주는 메소드 
-	public String getName() { // 입력은 필요 없음
-		return this.name; // 호출한 곳으로 돌아가는 법 = return 키워드 사용; 객체(this = 객체를 가리키는(?) 키워드)의 이름 반환하는 기능 수행
+	public String getName() { // 입력은 필요 없음 
+		return this.name; // 객체의 name을 참조한 것을 반환; 호출한 곳으로 돌아가는 법 = return 키워드 사용; 객체(this = 객체를 가리키는(?) 키워드)의 이름 반환하는 기능 수행
 						  // return 결과값 -> 결과값을 돌려주겠다
 						  // 메소드의 반환형과 결과값의 반환형이 동일한지 확인
 	}
@@ -77,7 +77,7 @@ public class Student {
 	
 	// 멤버변수의 접근제한자 private으로 바꾸고 + setter, getter 메소드 다 만들어줬으면 -> 캡슐화 끝
 	
-	// 이제 예쁘게 메소드
+	// 이제 내가 표시 형식 지정해서 예쁘게/쉽게/여러 정보 한 눈에 알아보기/출력하기 위한 메소드; 없어도 되는 부분
 	
 	public String information() {
 		// return name, age, gender; // 결과값은 return 하나당 한 개이도록..

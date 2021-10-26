@@ -3,6 +3,7 @@ package com.kh.array.run;
 import com.kh.array.A_Array;
 import com.kh.array.B_ArrayCopy;
 import com.kh.array.Homework;
+import com.kh.array.HomeworkWeekend;
 
 public class Run {
 	
@@ -24,16 +25,26 @@ public class Run {
 //		a.method8();
 		
 		B_ArrayCopy b = new B_ArrayCopy();
-		b.method1();
-		b.method2();
-		b.method3();
-		b.method4();
-		b.method5();
+//		b.method1();
+//		b.method2();
+//		b.method3();
+//		b.method4();
+//		b.method5();
 		
 		Homework h = new Homework();
 //		h.exercise1();
 //		h.exercise2();
 //		h.exercise3();
+		
+		HomeworkWeekend hw = new HomeworkWeekend();
+//		hw.exercise1();
+//		hw.exercise2();
+//		hw.exercise3();
+		hw.exercise4();
+		hw.stars2();
+		hw.stars3();
+		hw.stars4();
+		
 		
 	}
 

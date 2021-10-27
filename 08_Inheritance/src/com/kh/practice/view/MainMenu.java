@@ -3,8 +3,21 @@ package com.kh.practice.view;
 public class MainMenu {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		// [필드부]
+		
+		// [생성자부]
+		
+		// [메소드부]
 
+	}
+	
+	public void sum() {
+		
+	}
+	
+	public void times() {
+		
 	}
 
 }

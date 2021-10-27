@@ -52,10 +52,11 @@ public class User {
 //		System.out.println("생성자 호출 잘 되었나요?");
 //	}
 	
+	// 아래 (생성자) 메소드 이름이 모두 같고, 매개변수의 갯수와 자료형이 다름 = 오버로딩(overloading); 메소드 호출(loading) 시 여러 가지 방법으로 부를 수 있음
 	public User() {} // 이 기본 생성자 꼭 만들기; 특히 매개변수 있는 생성자를 만들면 JVM은 기본 생성자를 자동으로 안 만들어주므로 주의
 	
 	// 매개변수가 있는 생성자; 생성자의 매개변수로는 필드들이 들어올 수 있음; 매개변수 있는 생성자 2개 만든 것은 메소드 overloading
-	public User(String userId, String userPwd, String name) {
+	public User(String userId, String userPwd, String name) { // 객체에 초기값을 넣어줄 목적으로 매개변수 있는 생성자
 		this.userId = userId;
 		this.userPwd = userPwd;
 		this.name = name;

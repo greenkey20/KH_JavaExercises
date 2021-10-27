@@ -118,7 +118,7 @@ public class HomeworkWeekend { // 2021.10.22자 숙제 풀이 클래스 시작
 			System.out.println(user + " 치킨은 없는 메뉴입니다");
 		}
 		
-		// 방법3) 강사님 제시 답안
+		// 방법2) 강사님 제시 답안
 //		String rs = "";
 //	
 //		for (int i = 0; i <chickens.length; i++) {
@@ -135,6 +135,8 @@ public class HomeworkWeekend { // 2021.10.22자 숙제 풀이 클래스 시작
 	} // 숙제3번 풀이 메소드 영역 끝
 	
 	public void exercise4() { // 숙제4번 풀이 메소드 영역 시작
+		
+		System.out.println("[2021.10.22자 숙제4번: 사용자가 입력한 높이의 별 찍기]");
 		/* 다음과 같은 실행 예제를 구현하세요.
 		 * e.g.
 		 * 정수 입력 : 4
@@ -167,6 +169,8 @@ public class HomeworkWeekend { // 2021.10.22자 숙제 풀이 클래스 시작
 	} // 숙제4번 풀이 메소드 영역 끝
 	
 	public void stars2() { // 별찍기 추가2 메소드 영역 시작
+		System.out.println("[2021.10.26 별 찍기 추가2 연습]");
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.print("정수(별 쌓을 높이)를 하나 입력하세요 > ");
 		int num = sc.nextInt();
@@ -186,6 +190,8 @@ public class HomeworkWeekend { // 2021.10.22자 숙제 풀이 클래스 시작
 	} // 별찍기 추가2 메소드 영역 끝
 	
 	public void stars3() { // 별찍기 추가3 메소드 영역 시작
+		System.out.println("[2021.10.26 별 찍기 추가3 연습]");
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.print("정수(별 쌓을 높이)를 하나 입력하세요 > ");
 		int num = sc.nextInt();
@@ -208,6 +214,9 @@ public class HomeworkWeekend { // 2021.10.22자 숙제 풀이 클래스 시작
 	} // 별찍기 추가3 메소드 영역 끝
 	
 	public void stars4() { // 별찍기 추가4 메소드 영역 시작
+		System.out.println("[2021.10.26 별 찍기 추가4 연습]");
+		
+		// 인터넷에서 위/아래 영역 나눠서 codes 쓴다는 힌트 얼핏 보고(https://coding-factory.tistory.com/68) 풀이 시작
 		Scanner sc = new Scanner(System.in);
 		
 		while (true) { // while문 영역 시작
@@ -253,3 +262,9 @@ public class HomeworkWeekend { // 2021.10.22자 숙제 풀이 클래스 시작
 	} // 별찍기 추가4 메소드 영역 끝
 
 } // 2021.10.22자 숙제 풀이 클래스 끝
+
+// 2021.10.22자 주말 추가 숙제 소감: 1,2번은 차근차근 한 단계씩 하니 문제 처음 읽었을 때보다 쉽게 해결할 수 있었습니다.
+// 3번은 중간에 조금 헷갈렸습니다. 처음에 간단히 생각하고 풀었을 때 반복문 돌 때마다 출력 문구도 반복해서 출력되어 놀랐고, 1,2번 문제보다 조금 더 고민해서 해결책을 찾았습니다.
+// 4번은 인터넷에서 본 다른 별찍기 문제들보다 간단한 편이었지만, 아직 익숙하지 않아서인지 제어변수들 조건이 바로 안 떠오릅니다.
+// 스스로 별찍기를 못한다는 생각 때문인지 집착이 되어서 다른 몇 개도 그려보았는데, 풀이과정이 똑똑하지 못하고 코드가 너무 지저분한 것 같습니다.
+// 감사합니다!

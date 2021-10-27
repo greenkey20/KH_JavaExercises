@@ -3,6 +3,7 @@ package com.kh.chap06_method.controller;
 public class MethodTest2 {
 	
 	// static 메소드 만들기 -> static에 대한 예시
+	// 객체 생성할 필요 없이 프로그램 어디서든 호출해서/가져다 쓸 수 있음 <- 메모리의 static 영역에 있음
 	
 	// 1. 매개변수가 없고 반환값도 없는 메소드
 	public static void method1() {
@@ -25,11 +26,5 @@ public class MethodTest2 {
 		System.out.println("매개변수와 반환값이 둘 다 있는 메소드입니다");
 		return name + " 님, 안녕하세요! " + age + "세이시죠?";
 	}
-	
-	/* 반환형 없는 메소드: 출력문 작성하는 편
-	 * 반환형 있는 메소드: 호출하는 부분에서 출력문을 작성
-	 */
-		
-		
 
 }

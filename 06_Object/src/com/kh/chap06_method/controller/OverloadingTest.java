@@ -42,7 +42,7 @@ public class OverloadingTest {
 		System.out.println("이건 int a, int b, char c 받으면 구분 가능해요");
 	}
 	
-	// 반환형이 다르다고 오버로딩이 적용되지 않음; 반환형과 상관없이 매개변수의 자료형의 갯수와 순서가 다르게 작성되어야 함
+	// 메소드 호출 시 반환형을 명시하지 않는 바, 반환형이 다르다고 오버로딩이 적용되지 않음; 반환형과 상관없이 매개변수의 자료형의 갯수와 순서가 다르게 작성되어야 함
 	// 메소드를 호출하는 시점에서 매개변수가 동일하면 error 발생
 	/*
 	public void test(int a , int b, String s) {

@@ -32,18 +32,18 @@ public class Run {
 //		b.method5();
 		
 		Homework h = new Homework();
-//		h.exercise1();
-//		h.exercise2();
-//		h.exercise3();
+		h.exercise1();
+		h.exercise2();
+		h.exercise3();
 		
 		HomeworkWeekend hw = new HomeworkWeekend();
 //		hw.exercise1();
 //		hw.exercise2();
 //		hw.exercise3();
-		hw.exercise4();
-		hw.stars2();
-		hw.stars3();
-		hw.stars4();
+//		hw.exercise4();
+//		hw.stars2();
+//		hw.stars3();
+//		hw.stars4();
 		
 		
 	}

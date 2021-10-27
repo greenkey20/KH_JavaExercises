@@ -43,9 +43,9 @@ public class Homework { // 클래스 영역 시작
 		int min = nums[0];
 		
 		for (int i = 1; i < nums.length; i++) {
-			if (nums[i] >= max) {
+			if (max <= nums[i]) { // 나는 nums[i] >= max 이렇게 썼었는데, 강사님 제시 답안이 가독성이 나은 듯
 				max = nums[i];
-			} else if (nums[i] <= min) {
+			} else if (min >= nums[i]) { // 나는 nums[i] <= min 이렇게 썼었는데, 가독성을 위해 수정
 				min = nums[i];
 			}
 		}
@@ -64,45 +64,49 @@ public class Homework { // 클래스 영역 시작
 		
 		int[] nums = new int[6]; // lotto 번호 저장할, 정수 6개 저장할 배열 "nums" 선언 및 할당
 		
-		for (int i = 0; i < nums.length; i++) {
+		for (int i = 0; i < nums.length; i++) { // 첫번째 for문 영역 시작; lotto 번호 배열에 난수 6개를 채워넣을 반복문 
 			nums[i] = (int)(Math.random() * 45) + 1; // 배열 nums의 index 0~(배열 크기-1)에 lotto 번호 하나씩 대입/저장해줌
 			
-			
-			for (int j = 0; j < i; j++) { // 강사님께서 더 간단히 알려주신 코드
-				if (nums[i] == nums[j]) {
-					i--;
-					break;
+			if (i > 0) { // i = 0일 때/1개 뽑았을 때는 비교할 필요 없음
+				for (int j = 0; j < i; j++) { // 강사님께서 더 간단히 알려주신 코드
+					if (nums[i] == nums[j]) {
+						i--;
+						break;
+					}
 				}
 			}
 			
 //			for (int j = 1; j <= i; j++) { // 내가 지금 뽑아놓은 숫자만큼 비교하면 됨; 단 1개 뽑았을 때는 비교할 필요 없음
-//				if (nums[i] == nums[i -j]) { // 배열 nums에서 자신(현재 검사 중인 i)보다 앞에 오는 원소들(i-j)과 자신의 값이 같다면
+//				if (nums[i] == nums[i - j]) { // 배열 nums에서 자신(현재 검사 중인 i)보다 앞에 오는 원소들(i-j)과 자신의 값이 같다면
 //					i--; // 첫번째 for문의 증감식에 의해 i의 값이 증가하지 않도록 여기서 i의 값을 하나 감소시킨 뒤,
 //					break; // 첫번째 for문의 증감식으로 돌아가 현재 i의 lotto 번호를 다시 받을 수 있게 함
 //				}
 //			}
-		}
-		
-		for (int i = 0; i < nums.length; i++) {
-			System.out.print(nums[i] + " ");
-		}
+		} // 첫번째 for문 영역 끝
 		
 		Arrays.sort(nums); // Arrays 클래스에서 제공하는 sort() 정렬(올림차순)하는 기능 활용
 		
 		/* input -> 메소드 = 마법상자/클래스 안에 만들어놓은 함수/멤버함수 -> output
 		 * 
 		 * 지금까지 본 메소드(기능)
-		 * main(String[] args) // String 배열
+		 * main(String[] args) // String 배열을 매개변수(인자?)로 받음
 		 * input = 배열 -> Arrays.sort(정렬할 대상) -> output = 정렬된 배열
-		 * Arrays.toString();
-		 * 문자열.equals(비교대상);
-		 * Scanner(System.in);
+		 * Arrays.toString(보여줄 배열 이름);
+		 * Arrays.sort(정렬할 대상);
+		 * 문자열.equals(비교 대상 문자열);
+		 * Scanner(System.in); // Scanner클래스의 생성자
 		 * next();
-		 * input = 문자열(index) -> charAt() -> output = 문자 하나
+		 * input = 문자열 -> charAt(index번호) -> output = 문자 하나
 		 * print();
 		 * Math.random();
 		 */
 		
+		// 출력방법1)
+		for (int i = 0; i < nums.length; i++) {
+			System.out.print(nums[i] + " ");
+		}
+		
+		// 출력방법2)
 		System.out.println("\n☆행운과 행복의 lotto 번호☆ : " + Arrays.toString(nums) + "\n"); // toString() 기능 = 예쁘게 보여줌
 		
 		// lotto 번호 정렬 시도..
@@ -139,7 +143,7 @@ public class Homework { // 클래스 영역 시작
 		// 2021.10.22 아침 강사님 설명)
 //		String list = "문자열에 있는 문자 : " + input.charAt(0) + " "; // 사용자가 입력한 문자열에 사용된 문자를 순차적으로 + 중복 없이 저장할 문자열
 //		int count = input.length(); // String 변수 input에 저장된 주소에 담겨있는 문자열의 길이; 5
-		
+//		
 //		for (int i = 1; i <= input.length() - 1; i++) { // index 1부터 문자열의 길이-1(4)까지 반복; index0은 list에서 뺐기 때문에 반복 안 해도 됨
 //			// 반복문으로 charAt(i)번째 index와 charAt(j)번째 index까지 비교
 //			for (int j = 0; j <= i - 1; j++) {
@@ -154,6 +158,7 @@ public class Homework { // 클래스 영역 시작
 //		}
 		
 		// 내가 숙제로 제출한 것 + 강사님 설명 활용
+		// 나는 count--하는 대신, '반복되지 않는 문자를 쌓은 문자열의 길이 = 반복되지 않는 문자의 수' 계산해봄
 		String list = "" + input.charAt(0);
 		
 		for (int i = 1; i < input.length(); i++) { // 사용자가 입력한 문자열의 문자 하나하나 검사하기 위해
@@ -167,13 +172,14 @@ public class Homework { // 클래스 영역 시작
 			}
 		}
 		
+		// 반복되지 않는 문자를 쌓은 문자열을 좀 더 보기 좋게 표현하기 위해(문자 간 띄어쓰기) 아래와 같은 배열을 만들어 출력
 		char[] result = new char[list.length()];
 		
 		for (int i = 0; i < list.length(); i++) {
 			result[i] = list.charAt(i);
 		}
 
-		System.out.println("문자열에 있는 문자 : " + Arrays.toString(result));
+		System.out.println("문자열에 있는 문자 : " + Arrays.toString(result)); // 그냥 list를 출력하면 반복되지 않은 문자들이 띄어쓰기 없이 다닥다닥 붙어서 출력됨
 		System.out.println("중복되지 않는 문자 개수 : " + list.length());
 
 	} // exercise3 메소드 영역 끝

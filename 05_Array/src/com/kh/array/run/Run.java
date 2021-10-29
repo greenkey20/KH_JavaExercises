@@ -25,16 +25,16 @@ public class Run {
 //		a.method8();
 		
 		B_ArrayCopy b = new B_ArrayCopy();
-//		b.method1();
-//		b.method2();
-//		b.method3();
-//		b.method4();
-//		b.method5();
+		b.method1();
+		b.method2();
+		b.method3();
+		b.method4();
+		b.method5();
 		
 		Homework h = new Homework();
-		h.exercise1();
-		h.exercise2();
-		h.exercise3();
+//		h.exercise1();
+//		h.exercise2();
+//		h.exercise3();
 		
 		HomeworkWeekend hw = new HomeworkWeekend();
 //		hw.exercise1();

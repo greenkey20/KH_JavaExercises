@@ -72,7 +72,7 @@ public class B_ArrayCopy {
 		origin[2] = 33; // origin의 index2(세번째) 공간에 값 33를 대입
 		
 		System.out.println("=== 원본 배열 수정 완료 ===");
-		// 원본 배열만 수정을 했고, 복사한 배열도 수정x -> origin에 저장되어 있는 주소값 != copy에 저장되어 있는 주소값
+		// 원본 배열만 수정을 했고, 복사한 배열은 수정x -> origin에 저장되어 있는 주소값 != copy에 저장되어 있는 주소값
 		
 		System.out.println("--- 원본 배열 출력 ---");
 		for (int i = 0; i <= origin.length - 1; i++) {
@@ -85,7 +85,7 @@ public class B_ArrayCopy {
 		}
 		
 		System.out.println("\n원본 배열의 해시코드 : " + origin.hashCode());
-		System.out.println("복사본 배열의 해시코드 : " + copy.hashCode());
+		System.out.println("복사본 배열의 해시코드 : " + copy.hashCode()); // 원본 배열 해시코드 != 복사본 배열 해시코드 -> 두 배열은 다른 배열
 		
 	}
 	
@@ -104,7 +104,7 @@ public class B_ArrayCopy {
 		// 표현법: System.arraycopy(원본배열 이름, 원본배열에서 복사를 시작할 index, 복사본배열 이름, 복사본배열에서 복사가 시작될 index, 복사할 갯수);
 		System.arraycopy(origin, 0, copy, 0, 5); // copy 배열 = 1 2 3 4 5 0 0 0 0 0
 		System.arraycopy(origin, 0, copy, 2, 5); // copy 배열 = 1 2 1 2 3 4 5 0 0 0
-//		System.arraycopy(origin, 2, copy, 9, 2); // ArrayIndexOutOfBounds(방 없어) 오류
+//		System.arraycopy(origin, 2, copy, 9, 2); // Array Index Out Of Bounds(방 없어) 오류
 		
 		System.out.println("--- 복사본 배열 출력 ---"); // 원하는 배열 내부 값들이 복사된 것을 확인 가능; 주소값 복사x
 		for (int i = 0; i <= copy.length - 1; i++) {
@@ -112,7 +112,7 @@ public class B_ArrayCopy {
 		}
 		
 		System.out.println("\n원본 배열의 해시코드 : " + origin.hashCode());
-		System.out.println("복사본 배열의 해시코드 : " + copy.hashCode());
+		System.out.println("복사본 배열의 해시코드 : " + copy.hashCode()); // 원본 배열 해시코드 != 복사본 배열 해시코드 -> 두 배열은 다른 배열
 		
 	}
 	

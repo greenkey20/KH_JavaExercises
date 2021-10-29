@@ -151,7 +151,7 @@ public class Homework { // 클래스 영역 시작
 //					count--;
 //					break;
 //				} // 중복되지 않은 값을 넣어야 하는데..
-//				else if (input.charAt(i) != input.charAt(j) && j == i - 1) {
+//				else if (input.charAt(i) != input.charAt(j) && j == i - 1) { // result의 여러개의 값이 대입되지 않도록 같은 인덱스일때만 대입하는 조건
 //					list += input.charAt(i) + " ";
 //				}
 //			}

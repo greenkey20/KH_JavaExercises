@@ -280,6 +280,8 @@ public class A_Array { // 클래스 영역 시작
 			System.out.print(iArr[i] + " "); // 배열에 값 초기화해주지 않은 상태에서 값들은 0(.0)
 		}
 		
+		System.out.println();
+		
 	} // method5 영역 끝
 	
 	public void method6() { // method6 영역 시작
@@ -328,6 +330,10 @@ public class A_Array { // 클래스 영역 시작
 		System.out.println("--- sArr이 죽었다 살아났나(=sArr이 가리키고 있는 주소값이 바뀌었나)? ---");
 		System.out.println("죽었다 살아난 sArr의 해시코드 : " + sArr.hashCode());
 		
+		for (int i = 0; i < sArr.length; i++) {
+			System.out.println(sArr[i]); // 기존 sArr에 저장되어 있던 값을 날아감(?); 각 index에는 null 값(참조자료형의 기본값)이 들어가 있음
+		}
+		
 		/* 배열은 항상 고유한 주소값이 부여됨(이 명제가 항상 참인 것은 아님; 우리 수업에서는 참이라고 생각해도 됨) -> 주소값이 다르면 다른 배열; 비둘기집 원리/hash 충돌 (!= 기존에 생성된 주소와 절대 겹치지 않는다)
 		 * 기존 배열 이름에 '할당'만 다시 하면, 기존에 참조하고 있던 연결이 끊기고 새로운 배열과 연결됨 -> 새로운 곳을 참조
 		 * -> 연결이 끊어진 기존의 배열은 heap 영역의 메모리에 둥둥 떠다니다가 일정 시간이 지나면 garbage collector(쓰레기 모으는 자)가 삭제시켜줌 = 자동 메모리 관리; reference(참조) count(숫자 세는 것)가 0이면 garbage collector가 와서 소중한 메모리 자원을 가져감
@@ -337,13 +343,13 @@ public class A_Array { // 클래스 영역 시작
 		sArr = null; // "주소에는 아무 것도 없어" "'아무 주소도 없다'고 씌여있음" "주소값이 없다"; null = '아무 것도 존재하지 않음'을 의미; 많이 쓰임 -> kh강남으로 가리키는 것 끊음/없앰 
 		
 		System.out.println(sArr); // 출력 결과 = null 값 -> 아무 것도 존재하지 않음을 의미하는 null이 있음(o) 아무 것도 없는, 텅텅 비어있는 것(x)
+//		System.out.println(sArr.hashCode()); // 아무 것도 없는데 hashcode 어떻게 구하니? 오류 msg 뜸
 		
 		String[] arr = null;
 		System.out.println(sArr == arr); // 동등비교는 값을 비교하는 것; 출력 결과 = true
 		
 //		sArr[0] = "수강생 500배"; // 현재 sArr에는 아무 주소도 없음 -> Null Pointer Exception: 가리키는 게 아무 것도 없는데/주소가 없는데 어떻게 접근/대입할래? Cannot store to object array because "sArr" is null
 //		System.out.println(sArr[0]); // 실행해보니 위와 같은 오류 msg 뜸
-//		System.out.println(sArr.hashCode()); // 아무 것도 없는데 hashcode 어떻게 구하니? 오류 msg 뜸
 		
 		/* 기본 자료형에는 없는 개념
 		 * 참조 자료형에는 null이라는 개념 추가 -> 주소값이 있나, 없나?

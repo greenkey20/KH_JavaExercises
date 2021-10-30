@@ -31,7 +31,7 @@ public class PointMenu {
 			case 2 : rectangleMenu();
 				break;
 			case 9 : System.out.println("종료합니다");
-				break; // 2021.10.29 저녁 현재로써는 프로그램 종료 어떻게 시켜야 할지 모르겠음
+				return; // 2021.10.29 저녁 현재로써는 프로그램 종료 어떻게 시켜야 할지 모르겠음 -> 수업 시간 예제 보고 아이디어 얻어 return; 하니 프로그램 종료됨
 			default : continue;
 			}
 		} // while문 영역 끝

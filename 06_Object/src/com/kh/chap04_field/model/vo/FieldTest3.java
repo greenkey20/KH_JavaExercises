@@ -30,7 +30,6 @@ public class FieldTest3 {
 	 * Math 클래스의 PI 상수 필드도 제공
 	 */
 	
-	
 	public static void test() {
 		System.out.println("hello, Method!");
 	}

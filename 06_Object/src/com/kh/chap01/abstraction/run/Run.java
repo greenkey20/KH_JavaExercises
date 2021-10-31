@@ -8,7 +8,7 @@ public class Run { // 클래스 영역 시작
 	public static void main(String[] args) { // main메소드 영역 시작
 		
 		/* 객체(object) 지향(oriented) 프로그래밍(programming): 현실세계에서 독립적인 존재(객체)들 간의 상호작용(행위)을 프로그래밍 언어를 통해 코드를 구현하는 것
-		 * 객체: ____(앞으로 계속 배워나갈 것) 
+		 * 객체: ____(앞으로 계속 배워나갈 것) -> 클래스에 정의된 내용대로 new 연산자를 통해 메모리(heap 영역)에 생성된 것 -> 주소값이 들어감
 		 * 
 		 * 구현하고자 하는 프로그램 상의 객체(변수)를 만들기/생성하기 위해서는 클래스라는 틀을 먼저 만들어야 함; 객체를 만들기 위해서는 클래스가 있어야 함
 		 * 클래스 = blueprint(설계도), 붕어빵 틀, 공장; 각 객체/객체들의 모양/속성(정보/변수+행위/기능)을 담아내는 그릇/틀; value(값; 값을 담고 있는) object -> (재료만 있다면) 똑같은 것을 여러 개 만들어낼 수 있음 
@@ -29,18 +29,18 @@ public class Run { // 클래스 영역 시작
 		 * Rabbit(클래스) 우리집토끼(객체)
 		 * 우리집토끼의 특징:
 		 *   이름은 해피 -> String name;
-		 *   눈이 까맣다 -> String eyesColour;
-		 *   코가 분홍색이다 -> String noseColour;
-		 *   몸은 베이지색이다 -> String bodyColour;
-		 *   옷은 분홍색이다 -> String dressColour;
-		 *       literal
+		 *   눈이 까맣다 -> String eyesColor;
+		 *   코가 분홍색이다 -> String noseColor;
+		 *   몸은 베이지색이다 -> String bodyColor;
+		 *   옷은 분홍색이다 -> String dressColor;
+		 *       literal/값
 		 * 단계1) 이러한 멤버변수들을 포함하는 토끼(Rabbit) 클래스 만들기
 		 */
 		
 		// 단계2) 우리집토끼 객체("ourRabbit") 만들기
 		Rabbit ourRabbit = new Rabbit();
-		// Rabbit 클래스 = 사용자 정의 참조자료형 = RAM의 heap 영역의 주소값이 저장되어 있음
-		// 객체(ourRabbit) 생성 시 new 키워드 사용 -> 메모리의 heap 영역 공간에 할당됨
+		// Rabbit 클래스 = 사용자 정의 참조자료형 -> 이 클래스/자료형의 변수에는 RAM의 heap 영역의 주소값이 저장되어 있음
+		// 객체(ourRabbit) 생성 시 new 키워드 사용 -> 메모리의 heap 영역 공간에 할당됨; 객체를 생성하는 연산자 new의 결과 = 생성된 객체의 주소
 		
 		// 토끼 클래스의 두번째 객체(우리집토끼의 친구) 만들어주기
 		Rabbit rabbit2 = new Rabbit();
@@ -48,7 +48,7 @@ public class Run { // 클래스 영역 시작
 		// 단계3) 우리집토끼(객체)의 성질 입력
 		ourRabbit.name = "해피";
 		// 참조/직접접근 연산자 . 사용해서 우리집토끼 객체에 접근
-		// 접근(access)제어자(modifier): public 등을 통해 다른 패키지의 클래스에서도 접근 가능할 수 있도록 -> 객체에 직접 접근해서 값 대입해줌
+		// 접근(access)제어자(modifier): public 등을 통해 다른 패키지의 클래스에서도 접근 가능할 수 있도록 -> 객체에 직접 접근해서 값 대입해줌 (vs chap02 캡슐화)
 		ourRabbit.age = 4;
 		ourRabbit.weight = 450.95;
 		ourRabbit.eyesColor = "검은색";
@@ -76,14 +76,14 @@ public class Run { // 클래스 영역 시작
 				", 코 색깔은 " + rabbit2.noseColor + ", 나이는 " + rabbit2.age + "세, 몸무게는 " + rabbit2.weight + "g입니다 ^^");
 		
 		// 위와 같이 직접적으로 접근해서 값을 대입하거나 조회 시 vs 토끼의 키는 성장환경, 식습관, 운동 등 행동(메소드)에 따라 달라져야 함; 직접 접근 시 누군가 악의적으로/불합리하게 값 바꾸는 등 보안의 문제 생길 수 있음
-		// Q. 직접 접근을 막는 방법은 무엇인가요? -> 정보 은닉(객체 지향 설계 원칙 중 하나) -> 정보 은닉을 하기 위한 기술 중 하나 = 캡슐화(encapsulation)
 //		ourRabbit.weight = -3;
 //		System.out.println(ourRabbit.name + "의 몸무게는 " + ourRabbit.weight + "g입니다 ^^");
+		// 직접 접근을 막는 방법 = 정보 은닉(객체 지향 설계 원칙 중 하나) -> 정보 은닉을 하기 위한 기술 중 하나 = 캡슐화(encapsulation)
 		
-		ourRabbit.eat(5); // eat(먹기) 행동/메소드에 의해 내가 먹인(=메소드에 input한 값)만큼 살찜
+		ourRabbit.eat(5); // eat(먹기) 행동 ou 매개변수 있는 메소드로 만든 경우 메소드에 의해 내가 먹인(=메소드의 인자/argument로 input한 정수값)만큼 살찜
 		System.out.println(ourRabbit.name + "의 몸무게는 " + ourRabbit.weight + "g입니다");
 		
-		rabbit2.eat(2);  // 내가 먹인만큼 살찜
+		rabbit2.eat(2);
 		rabbit2.eat(3);
 		rabbit2.eat(1);
 		System.out.println(rabbit2.name + "의 몸무게는 " + rabbit2.weight + "g입니다");

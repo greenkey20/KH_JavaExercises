@@ -2,11 +2,11 @@ package com.kh.chap03_class.model.vo;
 
 public class Person {
 	
-	// 사람의 인적정보: 사람 모양으로, 호구 조사하는, 인적정보 담긴, 클래스
+	// 사람의 인적정보: 사람 모양의, 호구 조사하는, 인적정보 담긴, 클래스
 	// 주민번호, 이름, 나이, 성별, 휴대폰번호, 이메일주소
 	
 	// [필드(== 멤버변수 == 인스턴스변수)부]
-	// private 접근제한자 -> 외부에서 접근 불가능
+	// 캡슐화 단계1) private 접근제한자 -> 외부에서 접근 불가능
 	private String idNum;
 	private String name;
 	private int age;
@@ -17,6 +17,7 @@ public class Person {
 	// [생성자부]
 	
 	// [메소드부]
+	// 캡슐화 단계2)
 	// setter메소드: set필드명
 	public void setIdNum(String idNum) {
 		this.idNum = idNum;
@@ -48,7 +49,7 @@ public class Person {
 	}
 	
 	public String getName() {
-		return this.name;
+		return name; // this.는 생략 가능
 	}
 	
 	public int getAge() {
@@ -69,7 +70,7 @@ public class Person {
 	
 	// information(): 필드 모아서 예쁘게 반환하기
 	public String information() {
-		return name + "님(" + age + "세, " + gender + ")의 주민번호는 " + idNum + "이고, 휴대폰번호는 " + mobile + ", 이메일 주소는 " + email + "입니다.";
+		return name + "님(" + age + "세, 성별 " + gender + ")의 주민번호는 " + idNum + "이고, 휴대폰번호는 " + mobile + ", 이메일 주소는 " + email + "입니다.";
 	}
 
 }

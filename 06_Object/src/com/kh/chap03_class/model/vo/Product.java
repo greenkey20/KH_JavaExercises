@@ -5,13 +5,14 @@ public class Product {
 	// 상품명, 상품가격, 브랜드명
 	
 	// [필드부]
-	private String productName; // 멤버변수에 대해 사용할 수 있는 접근제한자 private = 클래스 내부에서 클래스의 메소드를 통해 접근
+	private String productName; // 캡슐화 단계1) 멤버변수에 대해 사용할 수 있는 접근제한자 private = 클래스 내부에서 클래스의 메소드를 통해 접근
 	private int price;
 	private String brandName = "애플"; // "애플"로 초기화를 해줌
 		
 	// [생성자부]
 		
 	// [메소드부]
+	// 캡슐화 단계2)
 	// setters
 	public void setProductName(String productName) {
 		this.productName = productName;

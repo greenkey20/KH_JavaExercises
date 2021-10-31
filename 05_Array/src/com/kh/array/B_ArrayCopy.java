@@ -49,7 +49,7 @@ public class B_ArrayCopy {
 		System.out.println("복사본 배열의 해시코드 : " + copy.hashCode());
 		// hascodes가 같다고 해서 둘이 같다고 할 수는 없으나, hashcodes가 다르면 둘은 다름 
 		
-	}
+	} 
 	
 	// 2-a. 깊은 복사
 	public void method2() {
@@ -74,12 +74,12 @@ public class B_ArrayCopy {
 		System.out.println("=== 원본 배열 수정 완료 ===");
 		// 원본 배열만 수정을 했고, 복사한 배열은 수정x -> origin에 저장되어 있는 주소값 != copy에 저장되어 있는 주소값
 		
-		System.out.println("--- 원본 배열 출력 ---");
+		System.out.println("--- 원본 배열 출력 ---"); // 1 2 33 4 5
 		for (int i = 0; i <= origin.length - 1; i++) {
 			System.out.print(origin[i] + " ");
 		}
 	    
-		System.out.println("\n--- 복사본 배열 출력 ---"); // 원하는 배열 내부 값들이 복사된 것을 확인 가능; 주소값 복사x
+		System.out.println("\n--- 복사본 배열 출력 ---"); // 원하는 배열 내부 값들이 복사된 것을 확인 가능 -> 1 2 3 4 5; 주소값 복사x
 		for (int i = 0; i <= copy.length - 1; i++) {
 			System.out.print(copy[i] + " ");
 		}
@@ -94,7 +94,7 @@ public class B_ArrayCopy {
 		
 		System.out.println("\n2-b. arraycopy() 메소드를 이용한 깊은 복사");
 		
-		// 새로운 배열을 생성한 후, System. 클래스 > arraycopy() 메소드 호출
+		// 새로운 배열을 생성한 후, System 클래스 > arraycopy() 메소드 호출
 		// 몇 번 index부터 '몇 개를' '어느 위치부터' 넣을 것인지, 괄호() 안에 작성하여 직접 지정 가능
 		
 		int[] origin = {1, 2, 3, 4, 5};
@@ -122,31 +122,32 @@ public class B_ArrayCopy {
 		System.out.println("\n2-c. copyOf() 메소드를 이용한 깊은 복사");
 		
 		// Arrays 클래스에서 제공하는 copyOf() 메소드
-		// 표현법: 복사본 배열 = Arrays.copyOf(원본배열 이름, 복사할 갯수);
+		// 표현법: 복사본 배열 = Arrays.copyOf(원본배열 이름, 복사할 갯수(=복사본 배열 (희망) 크기));
 		
 		int[] origin = {1, 2, 3, 4, 5};
 		
-		int[] copy1 = Arrays.copyOf(origin, 3); // 배열 선언과 동시에 초기화
-		int[] copy2 = Arrays.copyOf(origin, 10);
+		int[] copy1 = Arrays.copyOf(origin, 3); // 배열 선언과 동시에 초기화; 1 2 3
+		int[] copy2 = Arrays.copyOf(origin, 10); // 1 2 3 4 5 0 0 0 0 0
 		
 		System.out.println("--- 복사본 배열 출력 ---");
 		for (int i = 0; i <= copy1.length - 1; i++) {
 			System.out.print(copy1[i] + " ");
 		}
 		
-		System.out.println();
+		System.out.println(); // 줄 바꿈
+		
 		for (int i = 0; i <= copy2.length - 1; i++) {
-			System.out.print(copy2[i] + " ");
+			System.out.print(copy2[i] + " "); 
 		}
 		
 		System.out.println("\n원본 배열의 해시코드 : " + origin.hashCode());
 		System.out.println("복사본 배열1의 해시코드 : " + copy1.hashCode());
-		System.out.println("복사본 배열2의 해시코드 : " + copy2.hashCode());
+		System.out.println("복사본 배열2의 해시코드 : " + copy2.hashCode()); // 원본 배열 해시코드 != 복사본 배열들의 해시코드 -> 세 배열은 다른 배열
 		
 	}
 	
 	/* System.arraycopy(): 몇 번 index부터 몇 개를 어느 위치의 index에 복사할 것인지 모두 지정 가능
-	 * Arrays.copyOf(): 무조건 원본배열의 0번 index부터 복사 진행
+	 * Arrays.copyOf(): 무조건 원본배열의 0번 index부터, 내가 지정한 갯수만큼, 복사 진행
 	 */
 	
 	// 2-d. clone() 메소드를 이용한 깊은 복사
@@ -165,7 +166,7 @@ public class B_ArrayCopy {
 		// 메소드 Arrays.toString(내용 출력하고 싶은 배열의 식별자 입력); 예쁘게 보기 위해서 사용 -> [1, 2, 3, 4, 5]
 		
 		System.out.println("원본 배열의 해시코드 : " + origin.hashCode());
-		System.out.println("복사본 배열의 해시코드 : " + copy.hashCode());
+		System.out.println("복사본 배열의 해시코드 : " + copy.hashCode()); // 원본 배열 해시코드 != 복사본 배열 해시코드 -> 두 배열은 다른 배열
 		
 	}
 

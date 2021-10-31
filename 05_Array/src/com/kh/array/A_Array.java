@@ -305,11 +305,10 @@ public class A_Array { // 클래스 영역 시작
 		
 	} // method6 영역 끝
 	
-	/* 배열의 아쉬운 점: 한 번 지정한 배열의 크기는 변경 불가함
-	 * -> 배열의 크기를 변경하고자 한다면? 어쩔 수 없이 배열을 다시 만들어야 함; '죽었다 깨어나면' 다른 크기로 사용 가능
-	 * -> 배열 다시 만들기 = 할당 다시 하기 = 배열의 이름만 가져다 씀
+	/* 배열의 아쉬운 점: 한 번 지정한 배열의 크기는 변경 불가함 vs 배열의 크기를 변경하고자 한다면/더 많은 저장공간이 필요하다면? (어쩔 수 없이) 배열을 다시 만들어야 함; '죽었다 깨어나면' 다른 크기로 사용 가능
+	 * 배열 다시 만들기 = 할당 다시 하기 = 배열의 이름만 가져다 씀; 더 큰 배열을 새로 생성한 다음, 기존의 배열에 저장된 값들을 새로운 배열에 복사
 	 */
-	public void method7() { // method7 영역 시작 
+	public void method7() { // method7 영역 시작; 이 메소드에서는 배열의 크기를 변경하되, 기존 배열 내용물은 날아가는/기존 배열은 죽는 예시
 		String[] sArr = new String[3];
 		// 이 참조형의 이름 sArr은 단순한 이름/식별자일 뿐; 식별하기 위한 도구; 프로그래머가 지어준 것; 얘가 뭔가를 갖고 있는 것 아님; 이 이름으로 사용하는 것..
 		
@@ -331,7 +330,7 @@ public class A_Array { // 클래스 영역 시작
 		System.out.println("죽었다 살아난 sArr의 해시코드 : " + sArr.hashCode());
 		
 		for (int i = 0; i < sArr.length; i++) {
-			System.out.println(sArr[i]); // 기존 sArr에 저장되어 있던 값을 날아감(?); 각 index에는 null 값(참조자료형의 기본값)이 들어가 있음
+			System.out.println(sArr[i]); // 기존 sArr에 저장되어 있던 값은 날아감(?); 각 index에는 null 값(참조자료형의 기본값)이 들어가 있음 -> 출력 결과 = null (줄바꿈) null (줄바꿈) null (줄바꿈) null (줄바꿈) null (줄바꿈) null (줄바꿈) null
 		}
 		
 		/* 배열은 항상 고유한 주소값이 부여됨(이 명제가 항상 참인 것은 아님; 우리 수업에서는 참이라고 생각해도 됨) -> 주소값이 다르면 다른 배열; 비둘기집 원리/hash 충돌 (!= 기존에 생성된 주소와 절대 겹치지 않는다)
@@ -373,7 +372,49 @@ public class A_Array { // 클래스 영역 시작
 		
 	} // method7 영역 끝
 	
-	public void method8() {
+	public void method8() { // 배열의 길이 변경 + 배열 복사
+		// 단계1) 원본 배열 선언 및 초기화
+		String[] sArr = new String[3];
+		
+		sArr[0] = "강토미";
+		sArr[1] = "강스노크메이든";
+		sArr[2] = "강무민";
+		
+		System.out.println("원본 배열 sArr의 해시코드 : " + sArr.hashCode()); 
+		System.out.println("원본 배열 sArr의 내용물 : " + Arrays.toString(sArr));
+		
+		// 단계2) 원본 배열보다 더 큰 배열(객체)을 새로 생성
+		String[] copySArr = new String[7];
+		System.out.println("더 큰 배열 copySArr의 해시코드 : " + copySArr.hashCode());
+		
+		// 단계3) 원본 배열에 저장된 값들을 새로운 배열에 복사(깊은 복사)
+		// 방법1) for문
+		for (int i = 0; i < sArr.length; i++) {
+			copySArr[i] = sArr[i];
+		}
+		
+		// 방법2) 
+//		System.arraycopy(sArr, 0, copySArr, 0, sArr.length); // arraycopy() 메소드의 다섯번째 매개변수로 복사본 배열의 크기(> 원본 배열의 크기)를 넣으면 "Array Index Out Of Bounds Exception" error 발생 
+		
+		// 방법3)
+//		copySArr = Arrays.copyOf(sArr, copySArr.length); // copyOf() 메소드의 두번째 매개변수로 원본 배열의 크기를 넣으면 복사본 배열의 크기도 원본 배열로 바뀜 -> sArr.length로 쓰면 3칸짜리 배열이 됨
+		
+		// 참고: clone() 메소드 이용해서 깊은 복사하면 복사본 배열의 크기도 원본 배열처럼 바뀜 
+		// copySArr = sArr.clone(); // copySArr이 3칸짜리 배열이 됨
+		
+		System.out.println("깊은 복사를 통해 채워진, 더 큰 배열 copySArr의 내용물 : " + Arrays.toString(copySArr));
+		
+		// 단계4) 참조변수 sArr(원본 배열 이름)에 참조변수 copySArr의 (주소)값을 저장 
+		// -> sArr은 배열 copySArr을 가리키게 됨; 하나의 객체(배열)를 2개의 변수가 참조하게 됨(얕은 복사) -> 결과적으로 배열 sArr의 크기가 3으로부터 7로 변하게 됨
+		// sArr이 이전에 가리키던 (원본)배열은 더 이상 사용할 수 없음; 배열은 참조변수를 통해서만 접근할 수 있는 바, 원본 배열을 가리키는 참조변수가 없게 됨 -> 이렇게 쓸모없게 된 배열은 JVM의 garbage collector에 의해 자동적으로 메모리에서 제거됨
+		sArr = copySArr;
+		
+		System.out.println("얕은 복사를 통해 더 큰 배열이 된 sArr의 내용물 : " + Arrays.toString(sArr));
+		System.out.println("얕은 복사를 통해 더 큰 배열이 된 sArr의 해시코드 : " + sArr.hashCode());
+		
+	}
+	
+	public void method9() {
 		// 배열 선언 및 할당과 동시에 초기화/대입까지 한 번에 끝내는 방법
 		
 		// 방법1)

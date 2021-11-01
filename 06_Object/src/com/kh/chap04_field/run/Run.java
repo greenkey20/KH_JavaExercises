@@ -8,10 +8,11 @@ public class Run {
 		
 		// 1. FieldTest1
 		FieldTest1 f1 = new FieldTest1(); // 객체 생성(new 키워드 사용) 시 global 멤버변수가 heap 영역에 할당
-		// f1도 main메소드 안에서만 사용할 수 있는 지역변수 -> stack 영역에 할당; f1에는 f1이라는 객체의 heap 영역 주소값이 들어가 있음 -> 이 주소값을 따라가면 FieldTest1의 멤버변수 global 접근 가능(f1.global)
+		// f1도 main메소드 안에서만 사용할 수 있는 지역변수 -> stack 영역에 할당; f1에는 f1이라는 객체의 heap 영역 주소값이 들어가 있음 -> 이 주소값을 따라가면 FieldTest1의 멤버변수 global(정수형의 초기값 0으로 초기화 되어있음) 접근 가능; 단 private으로 선언되어 있는 바, 직접접근은 불가능
+		// f1.global = 2; // "The field FieldTest1.global is not visible"
 		
-		f1.test(10); // test 메소드 호출 시 num(메소드의 argument로써 10이라는 값이 저장되어 있음), local(클래스에서 초기값 0으로 초기화되어있음) 지역변수가 stack 영역에 할당
-		// -> test 메소드 호출 종료 시 num, local은 test 메소드 안에 있는 지역변수인 바 소멸
+		f1.test(10); // test 메소드 호출 시 num(메소드의 argument로써 10이라는 값이 저장되어 있음), local(클래스에서 초기값 1으로 초기화되어있음) 지역변수가 stack 영역에 할당
+		// -> test() 메소드 호출 종료 시 num, local은 test 메소드 안에 있는 지역변수인 바 소멸
 		
 		System.out.println(f1);
 		f1 = null; // f1의 주소값으로 null 값 대입 -> 참조하는 객체의 주소값 연결을 null로써 끊음 -> heap 영역의 f1 객체를 가리키는 존재(?)는 없어짐; reference count = 0 -> garbage collector가 와서 객체에 할당되었던(?) 메모리 되가져감 -> f1 객체에 있던/f1 객체의 것이었던 global 멤버변수 소멸
@@ -37,11 +38,11 @@ public class Run {
 //		System.out.println(f2.pri); // 이렇게 직접 접근 불가능
 		
 		// 3. FieldTest3
-//		FieldTest3 f3 = new FieldTest3();
+//		FieldTest3 f3 = new FieldTest3(); // 객체 생성 필요 없음
 		
-		System.out.println(FieldTest3.sta); // public static String sta 특징: 객체 생성하지 않아도 사용 가능 -> 객체 참조하지 않아도 됨; 클래스 참조 -> 클래스명 반드시 적어줘야 함, 다른 클래스에도 변수 이름이 중복될 수 있으므로..
-		// new.FieldTest3(); 객체 생성 필요 없음
-		System.out.println(FieldTest3.NUM); // public static final int NUM
+		System.out.println(FieldTest3.sta); // static/클래스 변수 특징: 객체 생성하지 않아도 사용 가능 -> 객체 참조하지 않아도 됨; 클래스 참조 -> 클래스명 반드시 적어줘야 함, 다른 클래스에도 변수 이름이 중복될 수 있으므로..
+		System.out.println(FieldTest3.NUM); // 상수 필드; public static final int NUM
+		FieldTest3.test(); // static 메소드도 객체 생성하지 않고, 클래스명 참조로 직접접근 가능
 		
 		System.out.println(Math.PI);
 

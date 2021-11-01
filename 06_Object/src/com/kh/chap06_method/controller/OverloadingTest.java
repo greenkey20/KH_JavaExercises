@@ -7,7 +7,7 @@ public class OverloadingTest {
 	 * 단, 매개변수명, 접근제한자, 반환형은 메소드 오버로딩에 영향을 주지 않음
 	 */
 	
-	// 메소드 이름은 test로 통일
+	// 메소드 이름은 test로 통일 -> 다양한 매개변수에 따라 여러 개 만들어놓음
 	public void test() { // 매개변수 없음
 		System.out.println("안녕하세요?"); // println(줄바꿔 출력하는 기능)의 매개변수로 문자열, 논리형, 정수형 등 여러 가지 사용 가능
 		System.out.println(true);

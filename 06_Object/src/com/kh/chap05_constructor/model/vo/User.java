@@ -10,6 +10,7 @@ public class User {
 	
 	// [필드부]
 	// 회원 ID, 비밀번호, 이름, 나이, 성별
+	// 캡슐화 단계1) 값 숨기기
 	private String userId;
 	private String userPwd;
 	private String name;
@@ -44,8 +45,7 @@ public class User {
 	 * 4. 매개변수 생성자를 명시적으로 작성하게 되면 기본 생성자를 JVM이 안 만들어줌 -> 기본 생성자를 만드는 습관을 들이는 것이 좋음
 	 */
 	
-//	public User() {
-//		// 기본 생성자: 매개변수가 없음
+//	public User() { // 기본 생성자: 매개변수가 없음
 //		/* 단지 객체를 생성할 목적으로 사용 -> 메모리 공간이 할당될 때, 공간 확보할 때..
 //		 * 기본 생성자는 작성 생략해도 오류 안 남 <- 생성자를 하나도 안 만들면 JVM이 기본 생성자를 자동으로 만들어줌(사람들이 자주 빼먹으니까 자동 생성되도록 기능으로 넣음) 
 //		 */
@@ -71,33 +71,43 @@ public class User {
 	}
 	
 	// [메소드부]
+	// 캡슐화 단계2) getter, setter 메소드 만들기
 	public String getUserId() {
 		return userId;
 	}
+	
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
+	
 	public String getUserPwd() {
 		return userPwd;
 	}
+	
 	public void setUserPwd(String userPwd) {
 		this.userPwd = userPwd;
 	}
+	
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 	public int getAge() {
 		return age;
 	}
+	
 	public void setAge(int age) {
 		this.age = age;
 	}
+	
 	public char getGender() {
 		return gender;
 	}
+	
 	public void setGender(char gender) {
 		this.gender = gender;
 	}

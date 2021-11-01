@@ -13,7 +13,7 @@ public class Run {
 		mt1.method1();
 		
 //		String a = mt1.method2(); // Type mismatch; 대입할 자료형 맞춰야 함
-		int a = mt1.method2(); // Type mismatch; 대입할 자료형 맞춰야 함
+		int a = mt1.method2(); 
 		System.out.println("랜덤값 : " + a);
 		System.out.println("랜덤값 : " + mt1.method2()); // 이 값 다시 안 쓸 것 같으면 굳이 변수 a 사용할 필요 없음
 		

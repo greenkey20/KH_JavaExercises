@@ -7,7 +7,7 @@ public class Run {
 	public static void main(String[] args) {
 		
 		// 1. 기본 생성자 사용해서 객체 생성 후, setter를 이용해서 필드값 초기화
-		User go = new User(); // 생성자 호출; User 클래스에서 기본 생성자 주석처리하면 User() 생성자가 선언되지 않았다고 오류 발생
+		User go = new User(); // 생성자 호출; User 클래스에서 기본 생성자 주석 처리하면 User() 생성자가 선언되지 않았다고 오류 발생
 		// 객체 지향 관점에서는 객체 생성 시 초기값을 대입해주는 것이 좋음 vs 웹개발 시 초기화 없이 생성하는 경우 많음 -> 기본 생성자를 항상 작성하자
 		go.setUserId("gomdol.kang");
 		go.setUserPwd("1234");
@@ -24,9 +24,7 @@ public class Run {
 		User u = new User("ubewarm", "1357", "강유베", 4, 'F');
 		System.out.println(u.information());
 		
-		// 굳이 setter는 왜 필요할까?
-		// 중간에 비밀번호 바꿔야 하거나 개명했다면?
-		
+		// 굳이 setter는 왜 필요할까? -> 중간에 비밀번호 바꿔야 하거나 개명했다면?
 		
 	}
 

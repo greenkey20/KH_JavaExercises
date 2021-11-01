@@ -12,7 +12,7 @@ public class PersonController {
 		
 	// [메소드부]
 	public int[] personCount() { // 각 객체배열에 저장된 객체의 수를 정수배열에 담아 반환하는 메소드
-		int[] count = new int[2];
+		int[] counts = new int[2];
 		
 		int studentCount = 0;
 		int employeeCount = 0;
@@ -29,24 +29,16 @@ public class PersonController {
 			}
 		}
 		
-		count[0] = studentCount;
-		count[1] = employeeCount;
+		counts[0] = studentCount;
+		counts[1] = employeeCount;
 		
-		return count;
+		return counts;
 	}
 	
 	public void insertStudent(String name, int age, double height, double weight, int grade, String major) {
 		// 매개변수로 받아온 데이터를 학생 객체배열 중 빈 곳에 저장하는 메소드
-		int index = 0;
-		
-		s[index].setName(name);
-		s[index].setAge(age);
-		s[index].setHeight(height);
-		s[index].setWeight(weight);
-		s[index].setGrade(grade);
-		s[index].setMajor(major);
-		
-		index++;
+		Student st = new Student(name, age, height, weight, grade, major);
+		s[personCount()[0]] = st;
 	}
 	
 	public Student[] printStudent() { // 학생 객체배열의 주소를 반환하는 메소드

@@ -18,7 +18,7 @@ public class Run {
 		
 		// Address 클래스와 객체 만들어 주소값 출력하는 것 따라서 못 함..
 		
-		// 눈에 보이지 않지만/명시되지 않았지만 숨겨져 있는 것; JVM이 하고 있던 일: super() 생성자, toString() 주소값 출력, Object클래스 상속, 반환형 void 메소드의 return;, 기본생성자, 자동형변환.. 
+		// 눈에 보이지 않지만/명시되지 않았지만 숨겨져 있는 것; JVM이 하고 있던 일: super() 생성자, toString() 주소값 출력, Object클래스 상속, 반환형 void 메소드의 return;, 기본생성자, 자동형변환, String 참조자료형 사용 시 String 객체 생성.. 
 		
 		System.out.println(c.toString());
 		System.out.println(s.toString());

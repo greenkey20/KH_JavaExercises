@@ -7,13 +7,13 @@ public class SmartPhone extends Product { // 자식클래스이름(상속받는)
 	// + brand, pCode, pName, price는 Product 클래스로부터 상속받음
 	
 	// [생성자부]
-	// 생성자는 클래스 이름이 다른 바 상속받을 수 없음
+	// 생성자는 클래스 이름이 다른 바, 상속받을 수 없음
 	public SmartPhone() {
 //		super(); // 보이진 않지만 부모의 기본 생성자가 들어가 있음
 		System.out.println("자식 객체 생성");
 	}
 	
-	// 초기화를 모두 진행할 생성자
+	// 필드의 초기화를 모두 진행할 생성자
 	public SmartPhone(String brand, String pCode, String pName, int price, String mobileAgency) {
 		
 		// 방법2) 부모클래스에 있는, public 접근제한자인 setter 메소드 호출
@@ -40,7 +40,7 @@ public class SmartPhone extends Product { // 자식클래스이름(상속받는)
 		return mobileAgency;
 	}
 	
-	// 내가 실행하고자 하는 메소드가 해당 클래스에 존재하지 않는다면 자동으로 해당 클래스의 부모클래스에 있는 메소드로 호출됨
+	// 내가 실행하고자 하는 메소드가 해당 클래스에 존재하지 않는다면, 자동으로 해당 클래스의 부모클래스에 있는 메소드로 호출됨
 	// SmartPhone 클래스에 information() 메소드 안 만들었는데, Run에서 SmartPhone 객체.information() 호출하면 값 볼/출력할 수 있음
 
 }

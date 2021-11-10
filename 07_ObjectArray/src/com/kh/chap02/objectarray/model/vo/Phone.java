@@ -17,7 +17,7 @@ public class Phone {
 	
 	// 모든 필드에 대한 매개변수 생성자 -> 이거 만들면 JVM이 기본생성자 안 만들어주므로, 기본생성자 습관적으로 꼭 만들기
 	public Phone(String name, String series, String brand, int price) {
-		// 초기화
+		// 필드의 값들을 초기화(하는 역할하는 생성자)
 		this.name = name;
 		this.series = series;
 		this.brand = brand;

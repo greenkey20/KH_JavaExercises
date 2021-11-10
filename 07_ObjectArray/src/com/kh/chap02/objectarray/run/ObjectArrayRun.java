@@ -10,22 +10,22 @@ public class ObjectArrayRun {
 		// 객체 배열 선언 및 할당
 		// Phone이라는 자료형을 담을 배열; int[] arr = new int[3];으로부터 자료형만 바뀐 것
 		Phone[] arr = new Phone[3];
-		// 객체의 배열의 index에는 주소값이 들어가 있음(참조자료형); 정보 직접 접근 못하게 되어있으므로 참조해서 접근하여 사용
+		// 객체의 배열의 index/각 방에는 객체의 주소값이 들어가 있음(참조자료형); 객체의 구성요소들의 정보는 직접 접근 못하게 되어있으므로, 참조해서 접근하여 사용
 		
-		System.out.println(arr); // arr이라는 배열의 주소값이 arr에 담겨있음
+		System.out.println(arr); // arr이라는 배열의 주소값이 arr에 담겨있음; [Lcom.kh.chap02.objectarray.model.vo.Phone;@41a4555e
 		System.out.println(arr.length); // 배열의 길이/방 갯수/크기 -> 반환값 = 정수 -> 3
 		System.out.println(arr[0]); // arr[0]이 가리킬 주소(값)(o) 객체(x)가 없음; 참조자료형으로써 기본값으로 null이 들어있음
 		
-		// 객체를 생성해서 arr[i]이 어떤 객체/주소를 가리키게 하고 싶음 -> new 키워드 사용 + 생성자 메소드 호출 -> Phone의 객체 생성
+		// 객체를 생성해서 arr[i]이 어떤 객체/주소를 가리키게 하고 싶음 + 배열 arr의 방(arr[i])에는 Phone 자료형이 들어갈 수 있음 -> new 키워드 사용 + 생성자 메소드 호출 -> Phone의 객체 생성
 		arr[0] = new Phone();
-		System.out.println(arr[0]); // 첫번째 폰 객체의 주소가 들어가 있음
+		System.out.println(arr[0]); // 첫번째 폰 객체의 주소가 들어가 있음; com.kh.chap02.objectarray.model.vo.Phone@39ed3c8d
 		
 		// set을 해줄 객체를 어디서 찾을 수 있는가/set을 해줄 객체의 주소가 어디에 있는가 -> arr[0]이 가지고 있음
 		arr[0].setName("아이폰");
 		arr[0].setSeries("12mini");
 		arr[0].setBrand("Apple");
 		arr[0].setPrice(900000);
-		System.out.println(arr[0]);
+		System.out.println(arr[0]); // com.kh.chap02.objectarray.model.vo.Phone@39ed3c8d
 		System.out.println(arr[0].information());
 		
 		// 두번째 객체
@@ -44,6 +44,8 @@ public class ObjectArrayRun {
 		*/
 		
 		// Array(배열)List(목록)(=배열의 먼 친척) 버전
+		System.out.println();
+		System.out.println("[Array(배열)List(목록)(=배열의 먼 친척) 버전]");
 		ArrayList<Phone> list = new ArrayList<>(3); // Phone 객체만 담을 수 있는 ArrayList를 생성
 		
 		// arraylist의 편리한 기능: add()로 요소 추가

@@ -8,13 +8,13 @@ public class ObjectRun {
 
 	public static void main(String[] args) { // main메소드 영역 시작 
 		
-		Book b1 = new Book();
+		Book b1 = new Book(); // Book 클래스/자료형의 객체1 생성; 매개변수 없는 생성자 사용
 		System.out.println(b1.information()); // 초기화가 안 되어 자료형들의 기본값들이 들어가 있음(null null null 0 0.0)
 		
-		Book b2 = new Book("자바의 정석", "도우출판", "남궁 성");
+		Book b2 = new Book("자바의 정석", "도우출판", "남궁 성"); // Book 클래스/자료형의 객체2 생성 및 초기화; 매개변수 3개 있는 생성자 사용
 		System.out.println(b2.information()); // 3개 필드가 인자의 값으로 초기화되어 출력됨
 		
-		Book b3 = new Book("해리 포터와 마법사의 돌", "매직출판사", "조앤 롤링", 14900, 0.1);
+		Book b3 = new Book("해리 포터와 마법사의 돌", "매직출판사", "조앤 롤링", 14900, 0.1); // Book 클래스/자료형의 객체3 생성 및 초기화; 매개변수 5개 있는 생성자 사용
 		System.out.println(b3.information());
 		
 		// 개인 소감: 책 여러 개 만들 수 있어서 신기하다..
@@ -69,7 +69,7 @@ public class ObjectRun {
 		// b1.title 멤버변수 private으로 선언했기 때문에 직접 접근 불가능 -> getTitle을 통해 값 반환받아야 함
 		
 		while (true) {
-			System.out.println("검색할 도서의 제목을 입력해주세요 > ");
+			System.out.print("검색할 도서의 제목을 입력해주세요 > ");
 			String searchTitle = sc.nextLine();
 			
 			if (b1.getTitle().equals(searchTitle)) { // 참조자료형(String)끼리 동등비교== 하면 주소값 비교하게 됨 vs 문자열 내용물 비교 시 .equals()라는 기능 사용(이 정도 오류 찾는 것 = 문제해결시나리오 문제 난이도 상)
@@ -85,7 +85,7 @@ public class ObjectRun {
 				break;
 			} else {
 				System.out.println("찾으시는 책이 없습니다");
-				continue;
+//				continue;
 			}
 		}
 

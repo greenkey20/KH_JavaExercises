@@ -2,12 +2,14 @@ package com.kh.chap01_oneVsmany.model.vo;
 
 public class Book {
 	
+	// [필드부]
 	private String title;
 	private String publisher;
 	private String author;
 	private int price;
 	private double discountRate;
 	
+	// [생성자부]
 	// 같은 메소드명 + 매개변수 갯수 달리 -> overloading
 	public Book() {
 		
@@ -27,6 +29,7 @@ public class Book {
 		this.discountRate = discountRate;
 	}
 
+	// [메소드부]
 	public String getTitle() {
 		return title;
 	}

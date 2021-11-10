@@ -17,7 +17,6 @@ public class Parent {
 	}
 	
 	// [메소드부]
-
 	public int getX() {
 		return x;
 	}

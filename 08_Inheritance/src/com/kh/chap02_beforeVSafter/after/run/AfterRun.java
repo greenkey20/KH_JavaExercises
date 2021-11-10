@@ -2,7 +2,7 @@ package com.kh.chap02_beforeVSafter.after.run;
 
 import com.kh.chap02_beforeVSafter.after.model.vo.*;
 
-public class AfterRun extends Object { // 모든 클래스는 Object라는 클래스를 상속받고 있음; Object는 모든 이의 조상
+public class AfterRun extends Object { // 모든 클래스는 Object라는 클래스를 상속받고 있음; Object는 모든 이의 조상; 'extends Object' 생략 가능
 
 	public static void main(String[] args) {
 		
@@ -23,28 +23,18 @@ public class AfterRun extends Object { // 모든 클래스는 Object라는 클�
 		Desktop d = new Desktop("Apple", "mc945-7", "짱짱데스크탑", 5000000, true);
 		Tv t1 = new Tv("LG", "tv04", "나노티비", 8000000, 70);
 		
-		System.out.println(d.information());
-		System.out.println(t1.information());
-		
-		// 자식클래스에 오버라이딩(부모클래스의 메소드를 재정의)을 했을 경우, 자식클래스의 오버라이딩된 메소드가 우선권을 가져 호출됨 -> Desktop, Tv information() 반환값 출력 결과에 자식 고유의 필드 값 추가되어 있음 
+		System.out.println(d.information()); // 부모클래스의 information() 메소드 overriding
+		System.out.println(t1.information()); // 부모클래스의 information() 메소드 overriding
+		// 자식클래스에 overriding(부모클래스의 메소드를 재정의)을 했을 경우, 자식클래스의 overriding된 메소드가 우선권을 가져 호출됨 -> Desktop/Tv information() 반환값 출력 결과에 자식 고유의 필드 값 추가되어 있음 
 		
 		/* 상속의 특징
 		 * Java에서는 클래스 간의 다중 상속 불가능 -> 단일 상속만 가능; 2개 이상의 부모를 가질 수 없음
-		 * 명시되어 있지는 않지만 모든 클래스(내가 는 Object 클래스의 후손
+		 * 명시되어 있지는 않지만 모든 클래스(내가 만든 클래스들 + Java에서 이미 제공하고 있는 클래스들)는 Object클래스의 후손 -> Object클래스에 있는 메소드를 호출해서 사용 가능 -> Object클래스에 있는 메소드가 마음에 안 드는 경우, overriding을 통해 재정의 가능
 		 * 
-		 * 
-		 * 
-		 * 
-		 * 장점
-		 * 중복된 코드를 공통적으로 관리 가능 -> 새로운 코드 작성할 때나 수정할 때 용이 + 보다 적은 양의 코드로 새로운 클래스를 만들 수 있음
+		 * 상속의 장점
+		 * 중복된 코드를 공통적으로 관리 가능 -> 새로운 코드 작성할 때나 수정할 때 용이; 보다 적은 양의 코드로 새로운 클래스를 만들 수 있음
 		 * 프로그램의 생산성과 가독성 향상, 유지보수에 크게 기여
-		 * 
-		 * 
 		 */
-		
-		
-		
-		
 
 	}
 

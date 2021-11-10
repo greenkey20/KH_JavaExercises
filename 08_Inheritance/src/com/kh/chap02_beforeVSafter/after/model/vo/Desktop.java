@@ -1,8 +1,7 @@
 package com.kh.chap02_beforeVSafter.after.model.vo;
 
 public class Desktop extends Product { // 상속받는 자식클래스 이름 extends(확장하다) 상속해주는 부모클래스 이름
-	// 상속의 특징: 부모로부터 상속받는 부분은 기술하지 않음
-	// 			 단, 메소드는 상속받아서 재정의해서 사용하는 경우 기술 가능(overriding)
+	// 상속의 특징: 부모로부터 상속받는 부분은 기술하지 않음; 단, 메소드는 상속받아서 재정의(overriding)해서 사용하는 경우 기술 가능
 	
 	// [필드부]
 	private boolean allInOne; // 모니터에 컴퓨터 기능이 있는 것; 논리형 변수 식별자의 경우 is 종종 붙여줌 e.g. isAllInOne
@@ -32,11 +31,10 @@ public class Desktop extends Product { // 상속받는 자식클래스 이름 ex
 		return allInOne;
 	}
 	
-	// 부모클래스의.. (필기 마저 못함)
-	// overriding
+	// 부모클래스(Product)의 information() 메소드는 가격까지만 반환해 주므로, Desktop에서 필요한 allInOne도 반환을 해주자 <- overriding
+	@Override
 	public String information() {
 		return super.information() + ", allInOne : " + allInOne;
 	}
-	
 
 }

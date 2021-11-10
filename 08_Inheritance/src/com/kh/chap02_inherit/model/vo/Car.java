@@ -12,7 +12,7 @@ public class Car extends Vehicle {
 	}
 
 	public Car(String name, double mileage, String type, int tire) {
-		super(name, mileage, type); // 상속(클래스명 extends..)을 해줘야지 생성장 super() 사용 가능함
+		super(name, mileage, type); // 상속(클래스명 extends..)을 해줘야지 생성자 super() 사용 가능함
 		this.tire = tire;
 	}
 	

@@ -9,7 +9,7 @@ public class Vehicle { // 탈 것
 	private String type; // 종류
 //	private double volume; // 부피
 //	private double speed; // 평균 시속
-//	private double MaxSpeed; // 최대 속도
+//	private double maxSpeed; // 최대 속도
 //	private String company; // 제조 회사
 //	private String engine; // 엔진 종류
 //	private int people; // 탑승 인원
@@ -79,7 +79,8 @@ public class Vehicle { // 탈 것
 //		this.price = price;
 //	}
 	
-	// 마지막으로 information() 메소드를 선언 -> Object클래스의 기존에 있는 메소드 toString()을 overriding해서 사용
+	// 마지막으로 information() 메소드를 선언 -> information() 대신, Object클래스의 기존에 있는 메소드 toString()을 overriding해서 사용
+	@Override
 	public String toString() {
 		return "name : " + name + ", mileage : " + mileage + ", type : " + type;
 	}

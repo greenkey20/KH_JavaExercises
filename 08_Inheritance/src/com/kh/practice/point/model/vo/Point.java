@@ -17,7 +17,7 @@ public class Point {
 	}
 	
 	// [메소드부]
-	public int getX(int x) {
+	public int getX() {
 		return x;
 	}
 

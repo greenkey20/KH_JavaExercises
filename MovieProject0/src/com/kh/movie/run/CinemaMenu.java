@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 import com.kh.movie.controller.CinemaController;
 
-public class CinemaMenu {
+public class CinemaMenu { // 영화 예매를 위해 사용자에게 보여지는 부분을 모아둔 클래스 
 	
-	private CinemaController cc = new CinemaController();
+	private CinemaController cc = new CinemaController(); // CinemaController 자료형을 갖는 객체 생성하여 변수 cc에 주소값을 담음
 	private Scanner sc = new Scanner(System.in);
 	
-	public void mainMenu() {
+	public void mainMenu() { // 영화 예매 앱의 메인메뉴
 		while(true) {
 			System.out.println("----------- 영화 예매 앱입니다 -----------");
 			System.out.println("1. 영화 예매");
@@ -31,8 +31,6 @@ public class CinemaMenu {
 				continue;
 			}
 		}
-		
-		
 		
 	}
 }

@@ -1,6 +1,6 @@
 package com.kh.movie.model.vo;
 
-public class Movie {
+public class Movie { // 영화관에서 상영 중인 영화 각각의 정보를 담는 클래스
 	
 	private String name;
 	private int time;

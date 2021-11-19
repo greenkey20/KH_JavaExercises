@@ -11,7 +11,7 @@ public class MusicView { // 사용자가 보는 화면 처리/시각적인 요�
 	// 사용자가 입력하는 값들 
 	
 	// [필드부]
-	private Scanner sc = new Scanner(System.in);
+	private Scanner sc = new Scanner(System.in); // Scanner는 교육용; 웹개발에서 입력은 웹에서 오는데, 아직 못하니까..
 	private MusicController mc = new MusicController(); // Controller에 넘겨줘야 하니까/Controller를 많이 쓸 것 같아서, MusicView의 필드로 만듦
 	
 	// [생성자부]

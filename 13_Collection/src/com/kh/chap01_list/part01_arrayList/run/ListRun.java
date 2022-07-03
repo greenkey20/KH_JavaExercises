@@ -33,12 +33,13 @@ public class ListRun {
 	 * 방대한 데이터를 담아만 두고 '조회'만 할 목적 -> 배열 사용
 	 * 방대한 데이터가 추가/수정/삭제될 경우 -> 컬렉션 사용
 	 * 
-	 * 컬렉션의 종류 3가지 List 계열: 담고자 하는 값(value)만 저장; 저장 시 순서 유지(index 있음); 중복 값 허용
-	 *  e.g. ArrayList(가장 많이 쓰임), LinkedList, Vector 등
+	 * 컬렉션의 종류 3가지; 컬렉션 프레임워크에서는 컬렉션 데이터 그룹을 3가지 타입이 존재한다고 인식 -> 각 컬렉션을 다루는 데에 필요한 기능을 가진 3개의 인터페이스 정의
+	 * List 계열: 담고자 하는 값(value)만 저장; 저장 시 순서 유지(index 있음); 중복 값 허용
+	 *  e.g. ArrayList(가장 많이 쓰임), LinkedList, Vector, Stack 등
 	 * Set 계열: 담고자 하는 값(value)만 저장; 저장 시 순서 유지x; 중복 값 허용x
 	 *  e.g. HashSet, TreeSet 등
 	 * Map 계열: 키(key) + 값(value) 세트로 저장; 저장 시 순서 유지x; 중복 키 허용x + 중복 값 허용
-	 *  e.g. HashMap, HashTable, TreeMap, Properties
+	 *  e.g. HashMap, HashTable, TreeMap, Properties 등
 	 * -> 용도에 따라 장단점(?) 다름; 개념적으로 어려워서 공부하기 어렵겠지만, 위 예시들 다 개별적으로 공부하기 -> 예시 면접 질문: HashTable 만들어보세요(수행에 10분 정도 소요)
 	 */
 
@@ -56,22 +57,20 @@ public class ListRun {
 		 * 추상클래스 AbstractList 상속받음 + public class ArrayList<E> extends AbstractList<E>
         implements List<E>, RandomAccess, Cloneable, java.io.Serializable구현함
 
-E: Object로 이해하기 -> <E> = '제네릭'이라고 불림
-
-public class ArrayList<E> extends AbstractList<E>
-        implements List<E>, RandomAccess, Cloneable, java.io.Serializable
-{
-    @java.io.Serial
-    private static final long serialVersionUID = 8683452581122892189L; // static -> 상수 필드
-		 * 
+		E: Object로 이해하기(특정 타입) -> <E> = '제네릭'이라고 불림
+		
+		public class ArrayList<E> extends AbstractList<E>
+		        implements List<E>, RandomAccess, Cloneable, java.io.Serializable
+		{
+		    @java.io.Serial
+		    private static final long serialVersionUID = 8683452581122892189L; // static -> 상수 필드
 		 */
 		
-		
 		List list = new ArrayList(3); // 내부적으로 크기가 3짜리 ArrayList가 생성됨
-		// 수업 시작할 때는 ArrayList 참조자료형으로 ArrayList 만들었는데, 앞으로는 반드시 ArrayList로 만들어야 하는 상황이 아니라면 List로 ArrayList를 만들자(2021.11.18(목) 14h 수업) -> 선언, 초기화 부분 제대로 필기했는지 모르겠음..
+		// 수업 시작할 때는 ArrayList 참조자료형으로 ArrayList 만들었는데, 앞으로는 반드시 ArrayList로 만들어야 하는 상황이 아니라면 List로 ArrayList를 만들자(2021.11.18(목) 14h 수업) -> 선언, 초기화 부분 제대로 필기했는지 모르겠음 + 2022.4.15(금) 22h35 나의 질문 why?
 		System.out.println(list); // []
 		// index = 위치
-		// 리스트/배열에 들어간 내용물 = 요소/element
+		// 리스트/배열에 들어간 내용물 = 요소/element -> data가 ,(comma)로 구분되어 list 안에 나열됨
 		
 		// 1. Music 객체를 만들어서/생성해서(new Music()) 비어있는 list에 추가하기
 		// add(): 인자로 전달된 요소를 해당 리스트의 끝에 추가시켜주는 메소드
@@ -93,7 +92,7 @@ public class ArrayList<E> extends AbstractList<E>
 		System.out.println(list);
 		
 		// 12h
-		// 2. (객체 xx? 제대로 못 들음) 값 수정
+		// 2. 값(객체의 요소) 수정
 		// set(int index, E e): 전달된 e로 리스트의 index 자리의 값을 변경
 		list.set(0, "시작");
 		list.set(3, new Music("Sunday", "Oliver SCHORIES"));
@@ -104,7 +103,7 @@ public class ArrayList<E> extends AbstractList<E>
 		// remove(int index): 리스트의 index 자리에 담긴 값을 삭제
 		list.remove(0); // 실행 후 새로운 0번 인덱스의 값 = 'Awake' 노래의 정보
 //		list.remove(5); // 'Index Out Of Bounds Exception: Index 5' 발생 -> 인덱스의 값을 잘 고려해서 삭제해야 함
-		list.remove(list.size() - 1); // 이해는 하는데, 필기하느라 강사님 설명 잘 못 듣고 넘어감
+		list.remove(list.size() - 1); // 2022.7.2(토) 0h25 보완 = list의 인덱스가 몇 번까지 있는지 잘 모르겠지만 맨 뒤의 자료를 삭제 <- 이해는 하는데, 필기하느라 강사님 설명 잘 못 듣고 넘어감
 		System.out.println(list);
 		
 		// 4. 리스트의 크기 반환 받기

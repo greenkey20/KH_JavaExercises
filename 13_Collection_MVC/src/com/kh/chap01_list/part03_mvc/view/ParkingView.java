@@ -55,7 +55,8 @@ public class ParkingView {
 		
 	} // deleteCar() 종료
 	
-	public Car searchCar() { // 특정 차량을 검색할 수 있는 서브메뉴(화면)
+	public Car searchCar() {
+		return null; // 특정 차량을 검색할 수 있는 서브메뉴(화면)
 		
 	} // searchCar() 종료
 

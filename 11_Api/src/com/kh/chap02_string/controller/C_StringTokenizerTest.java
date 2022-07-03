@@ -19,9 +19,9 @@ public class C_StringTokenizerTest {
 			System.out.println(sArr[i]);
 		}
 		
-		// 향상된(enhanced) for문: 초기식, 조건식, 증감식 필요 없음
+		// 향상된(enhanced) for문: 초기식, 조건식, 증감식 필요 없음 cf. Java의 정석 p.166
 		// for each문
-		// 표현법: for(값을 받아줄 변수 선언 : 순차적으로 접근한 배열(){ }
+		// 표현법: for (값을 받아줄 변수 선언 : 순차적으로 접근한 배열) { }
 		// 단점: 배열의 값 수정 불가능; 출력만 가능 -> 용도에 맞게 쓰면 됨
 		for (String s : sArr) {
 			System.out.println(s);

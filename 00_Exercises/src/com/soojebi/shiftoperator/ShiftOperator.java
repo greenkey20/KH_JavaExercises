@@ -2,8 +2,10 @@ package com.soojebi.shiftoperator;
 
 /**
  * @author greenpianorabbit
- * 2022.7.4(ì›”) 23h45 ì •ë³´ì²˜ë¦¬ê¸°ì‚¬ ì‹¤ê¸° í”„ë¡œê·¸ëž˜ë° ì–¸ì–´ í™œìš© 6-34
- * shift ì—°ì‚°ìž = í”¼ì—°ì‚°ìžì˜ 2ì§„ìˆ˜ í‘œí˜„ì˜ ê° ìžë¦¬ë¥¼ ì˜¤ë¥¸ìª½(>>) ë˜ëŠ” ì™¼ìª½(<<)ìœ¼ë¡œ ì´ë™(shift)
+ * 2022.7.4(¿ù) 23h45 Á¤º¸Ã³¸®±â»ç ½Ç±â ÇÁ·Î±×·¡¹Ö ¾ð¾î È°¿ë 6-34
+ * shift ¿¬»êÀÚ = ÇÇ¿¬»êÀÚÀÇ 2Áø¼ö Ç¥ÇöÀÇ °¢ ÀÚ¸®¸¦ ¿À¸¥ÂÊ(>>) ¶Ç´Â ¿ÞÂÊ(<<)À¸·Î ÀÌµ¿(shift)
+ * 
+ * ÇÁ·Î±×·¥ÀÇ ½ÇÇà ¼Óµµ vs ÄÚµåÀÇ °¡µ¶¼º
  */
 public class ShiftOperator {
 

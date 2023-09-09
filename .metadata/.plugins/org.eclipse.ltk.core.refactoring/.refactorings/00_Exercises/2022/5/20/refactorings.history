@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move &apos;Main_2231.java&apos; to &apos;string&apos;" description="Move &apos;Main_2231.java&apos; to &apos;string&apos;" destination="src/com/baekjoon/string" element1="src/com/baekjoon/control/Main_2231.java" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1652538222242" updateReferences="true"/>
-</session>

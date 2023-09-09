@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;00_Exercises/src/com/soojebi/staticVariable&apos; to &apos;staticvariable&apos;" description="Rename resource &apos;staticVariable&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/com/soojebi/staticVariable" name="staticvariable" stamp="1655984971031" updateReferences="true"/>
-</session>

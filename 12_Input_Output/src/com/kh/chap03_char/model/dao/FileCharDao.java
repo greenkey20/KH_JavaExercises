@@ -90,7 +90,7 @@ public class FileCharDao {
 			// 반복문 사용해서 파일 내용 읽어오기
 			int value = 0;
 			while ((value = fr.read()) != -1) {
-				System.out.print((char)value); // 유니코드 숫자(?)가 아닌, 문자로 보고 싶으므로 (char)로 형 변환
+				System.out.print((char)value); // 유니코드 숫자가 아닌, 문자로 보고 싶으므로 (char)로 형 변환
 			}
 			
 		} catch (FileNotFoundException e) {

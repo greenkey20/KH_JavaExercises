@@ -1,4 +1,4 @@
-package com.kh.hw.person.run;
+package src.com.kh.hw.person.run;
 
 import com.kh.hw.person.controller.PersonController;
 import com.kh.hw.person.view.PersonMenu;

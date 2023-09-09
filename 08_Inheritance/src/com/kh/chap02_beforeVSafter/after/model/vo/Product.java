@@ -1,4 +1,4 @@
-package com.kh.chap02_beforeVSafter.after.model.vo;
+package src.com.kh.chap02_beforeVSafter.after.model.vo;
 
 /* 상속: 매 클래스마다 중복된 필드 및 메소드들을 단 한 번 또는 하나의 클래스(부모 클래스)로 만들어놓고/정의해 둔 후, 해당 클래스의 내용(속성(변수, 데이터) 및 행위(메소드, 함수))을 가져다 쓰는 개념;
  * 기존의/원래있는 클래스(부모 클래스 e.g. Product)를 이용해서 새로운 클래스(자식 클래스; 기존 클래스보다 plus 요소가 있는/뭔가 바뀐/개선된 것이 있는, 원래 적혀있는 것 적지 않고(o) 코드 복사해서 수정(x))(들 e.g. Desktop, SmartPhone, Tv 등)를 만듦

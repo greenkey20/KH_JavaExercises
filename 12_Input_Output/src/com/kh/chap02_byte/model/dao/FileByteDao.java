@@ -29,7 +29,7 @@ public class FileByteDao { // FileByteDao 클래스 영역 시작
 			
 			// 2. write() 메소드 호출 -> 연결 통로로 데이터 출력
 			// cf. 1byte 자료형 (표현) 범위 = -128 ~ 127 숫자 출력 가능
-			// 0 ~ 127 숫자만 사용 가능(어디서?) + 음수는 사용 불가능 cf. ASCII table(코드표)
+			// 0 ~ 127 숫자만 사용 가능 + 음수는 사용 불가능 cf. ASCII table(코드표)
 			// 데이터 출력
 			// fout.write(97); // a; "Unhandled exception type IOException" -> 예외 처리 필요(자동완성으로 하기)
 			// fout.write(98); // b; 윗줄 a 인자 메소드 호출 주석 처리 후, 이 줄 메소드 호출 -> a_byte.txt 파일에는 b가 입력되어있음 -> 쓸 때마다 덮어쓰게 됨 -> FileOutpuStream 생성자에 true 옵션 쓴 뒤 다시 실행해보면 'bb' 입력되어있음
@@ -38,7 +38,7 @@ public class FileByteDao { // FileByteDao 클래스 영역 시작
 			fout.write(98); // b
 			fout.write(99); // c
 			fout.write(100); // d
-			// e(101), f(102), g(103)를 한 번에 입력하고 싶다면, 배열 사용 -> byte형을 전달할 수 있는 스트림이므로 다음 char[] arr = {101, 102, 103}, int[] arr = {101, 102, 103} 배열 사용 불가
+			// e(101), f(102), g(103)를 한 번에 입력하고 싶다면, 배열 사용 -> byte형을 전달할 수 있는 스트림이므로 다음 char[] arr = {101, 102, 103}, int[] 배열 사용 불가
 			byte[] arr = {101, 102, 103};
 			fout.write(arr); // efg 추가; 메소드의 오버로딩 -> byte형 정수, byte형 배열 등 여러 종류의 매개변수 사용 가능
 			fout.write(arr, 1, 2); // arr배열의 1번 index부터 2개만 씀 -> fg 추가

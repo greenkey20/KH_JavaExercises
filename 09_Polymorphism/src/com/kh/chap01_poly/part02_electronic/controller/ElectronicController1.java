@@ -1,6 +1,6 @@
-package com.kh.chap01_poly.part02_electronic.controller; // 기능을 담당 -> 전자기기들을 control하겠다
+package src.com.kh.chap01_poly.part02_electronic.controller; // 기능을 담당 -> 전자기기들을 control하겠다
 
-import com.kh.chap01_poly.part02_electronic.model.vo.*;
+import src.com.kh.chap01_poly.part02_electronic.model.vo.*;
 
 // 다형성 적용 전: 용산 전자상가에 새로 차린 가게
 public class ElectronicController1 {

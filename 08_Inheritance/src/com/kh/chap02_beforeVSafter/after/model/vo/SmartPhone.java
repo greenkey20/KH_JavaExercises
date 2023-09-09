@@ -1,4 +1,4 @@
-package com.kh.chap02_beforeVSafter.after.model.vo;
+package src.com.kh.chap02_beforeVSafter.after.model.vo;
 
 public class SmartPhone extends Product { // 자식클래스이름(상속받는) extends(확장하다) 부모클래스이름(상속해주는)
 	

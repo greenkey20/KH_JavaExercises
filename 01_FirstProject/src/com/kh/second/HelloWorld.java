@@ -1,4 +1,4 @@
-package com.kh.second;
+package src.com.kh.second;
 
 public class HelloWorld {
 

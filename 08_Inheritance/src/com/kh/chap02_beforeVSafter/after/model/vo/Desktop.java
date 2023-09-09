@@ -1,4 +1,4 @@
-package com.kh.chap02_beforeVSafter.after.model.vo;
+package src.com.kh.chap02_beforeVSafter.after.model.vo;
 
 public class Desktop extends Product { // 상속받는 자식클래스 이름 extends(확장하다) 상속해주는 부모클래스 이름
 	// 상속의 특징: 부모로부터 상속받는 부분은 기술하지 않음; 단, 메소드는 상속받아서 재정의(overriding)해서 사용하는 경우 기술 가능

@@ -23,7 +23,7 @@ public class FileRun {
 			// createNewFile(): 파일을 생성해주는 메소드
 			
 			// 2. 실제 존재하는 경로(e.g. C:\aaa)를 지정한 파일명을 제시해서 파일 생성
-			// C드라이브에 만들면 관리자 권한 등 조금 복잡할 수 있어서 D드라이브에 새 폴더 'aaa' 만들어 실습 권장(C드라이브 밖에 없으면 어쩔 수 없음.. C드라이버에 관리자 권한 문제 생기면 Eclipse 실행부터 관리자 권한으로..) 
+			// C드라이브에 만들면 관리자 권한 등 조금 복잡할 수 있어서 D드라이브에 새 폴더 'aaa' 만들어 실습 권장(C드라이브 밖에 없으면 어쩔 수 없음.. C드라이버에 관리자 권한 문제 생기면 Eclipse 실행부터 관리자 권한으로..)
 			File file2 = new File("C:\\aaa\\test.txt"); // "Invalid escape sequence (valid ones are  \b  \t  \n  \f  \r  \"  \'  \\ )" vs \를 \로 쓰고 싶다면 \ 하나 더 붙여주면 됨 -> file2 객체 생성
 			// "C:\aaa\test.txt" = 절대경로
 			// cf. 역slash(\) + tab = 8칸 공백 띄어쓰기
@@ -44,7 +44,7 @@ public class FileRun {
 			File file4 = new File("C:\\bbb\\text.txt");
 			file4.createNewFile();
 			
-			// cf. printStackTrace(): 오류를 차곡차곡 쌓아두었다가 오류가 발생한 부분을 찾아가서 알려줌?
+			// cf. printStackTrace(): 오류를 차곡차곡 쌓아두었다가 오류가 발생한 부분을 찾아가서 알려줌
 			
 			// File 클래스에서 제공하는 메소드들
 			

@@ -1,5 +1,5 @@
 // 2021.11.18(목) 11h
-package com.kh.chap01_list.part01_arrayList.model.vo;
+package src.com.kh.chap01_list.part01_arrayList.model.vo;
 
 public class Music {
 

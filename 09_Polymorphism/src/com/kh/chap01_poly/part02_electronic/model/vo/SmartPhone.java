@@ -1,4 +1,4 @@
-package com.kh.chap01_poly.part02_electronic.model.vo;
+package src.com.kh.chap01_poly.part02_electronic.model.vo;
 
 public class SmartPhone extends Electronic {
 	

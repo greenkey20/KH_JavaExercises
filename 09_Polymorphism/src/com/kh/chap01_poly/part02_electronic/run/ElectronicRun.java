@@ -1,12 +1,8 @@
-package com.kh.chap01_poly.part02_electronic.run;
+package src.com.kh.chap01_poly.part02_electronic.run;
 
-import com.kh.chap01_poly.part02_electronic.controller.ElectronicController1;
-import com.kh.chap01_poly.part02_electronic.controller.ElectronicController2;
-import com.kh.chap01_poly.part02_electronic.model.vo.Desktop;
-import com.kh.chap01_poly.part02_electronic.model.vo.Electronic;
-import com.kh.chap01_poly.part02_electronic.model.vo.NintendoSwitch;
-import com.kh.chap01_poly.part02_electronic.model.vo.SmartPhone;
-import com.kh.chap01_poly.part02_electronic.model.vo.Test;
+import src.com.kh.chap01_poly.part02_electronic.controller.ElectronicController1;
+import src.com.kh.chap01_poly.part02_electronic.controller.ElectronicController2;
+import src.com.kh.chap01_poly.part02_electronic.model.vo.*;
 
 public class ElectronicRun {
 

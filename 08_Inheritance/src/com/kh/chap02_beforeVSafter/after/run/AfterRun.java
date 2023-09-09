@@ -1,6 +1,6 @@
-package com.kh.chap02_beforeVSafter.after.run;
+package src.com.kh.chap02_beforeVSafter.after.run;
 
-import com.kh.chap02_beforeVSafter.after.model.vo.*;
+import src.com.kh.chap02_beforeVSafter.after.model.vo.*;
 
 public class AfterRun extends Object { // 모든 클래스는 Object라는 클래스를 상속받고 있음; Object는 모든 이의 조상; 'extends Object' 생략 가능
 

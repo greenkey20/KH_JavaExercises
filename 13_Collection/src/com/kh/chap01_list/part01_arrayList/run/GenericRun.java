@@ -1,9 +1,9 @@
 // 2021.11.18(목) 14h35
-package com.kh.chap01_list.part01_arrayList.run;
+package src.com.kh.chap01_list.part01_arrayList.run;
+
+import src.com.kh.chap01_list.part01_arrayList.model.vo.Music;
 
 import java.util.ArrayList;
-
-import com.kh.chap01_list.part01_arrayList.model.vo.Music;
 
 public class GenericRun {
 

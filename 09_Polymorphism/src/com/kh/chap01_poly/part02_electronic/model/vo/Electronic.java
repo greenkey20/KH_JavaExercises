@@ -1,4 +1,4 @@
-package com.kh.chap01_poly.part02_electronic.model.vo;
+package src.com.kh.chap01_poly.part02_electronic.model.vo;
 
 // 부모클래스; 용산 전자상가에서 살 수 있는 전자제품들
 public class Electronic {

@@ -1,6 +1,6 @@
-package com.kh.chap01_poly.part02_electronic.controller;
+package src.com.kh.chap01_poly.part02_electronic.controller;
 
-import com.kh.chap01_poly.part02_electronic.model.vo.Electronic;
+import src.com.kh.chap01_poly.part02_electronic.model.vo.Electronic;
 
 //다형성 적용 후: 용산 전자상가에 부모님으로부터 상속받아 새로, 더 좋게, 차린 가게 -> Controller1에 비해 codes가 훨씬 간결해짐 -> 생산성 향상 
 public class ElectronicController2 {

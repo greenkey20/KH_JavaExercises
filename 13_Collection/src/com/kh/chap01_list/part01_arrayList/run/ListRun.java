@@ -1,10 +1,10 @@
 // 2021.11.18(목) 10h45
-package com.kh.chap01_list.part01_arrayList.run;
+package src.com.kh.chap01_list.part01_arrayList.run;
+
+import src.com.kh.chap01_list.part01_arrayList.model.vo.Music;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.kh.chap01_list.part01_arrayList.model.vo.Music;
 
 public class ListRun {
 
@@ -22,7 +22,7 @@ public class ListRun {
 	 * 1. 한 타입(type)의 데이터만 저장 가능
 	 * 2. 배열 쓰고자 할 때 크기를 먼저 지정해야 함 -> 한 번 지정된 크기는 변경이 불가능; 새로운 값을 추가하고자 할 때 크기가 over될 경우, 새로운 크기의 배열을 만들고, 기존의 내용들을 복사하는 코드를 직접 짜야 함
 	 * 3. 배열 중간 위치에 새로운 데이터를 추가/삭제하는 경우, 기존의 값들을 앞으로 당겨주거나 뒤로 밀어주는 코드를 직접 짜야 함
-	 * -> 배열은 메모리 공간을 비교적 효율적으로(? 제대로 못 들은 듯) 사용 가능
+	 * -> 배열은 메모리 공간을 비교적 효율적으로 사용 가능
 	 * 
 	 * 컬렉션의 장점
 	 * 1. 기본적으로 여러 타입의 데이터 저장 가능 vs generic 설정 -> 같은/한 타입의 데이터만 묶어서도 저장 가능
@@ -40,7 +40,7 @@ public class ListRun {
 	 *  e.g. HashSet, TreeSet 등
 	 * Map 계열: 키(key) + 값(value) 세트로 저장; 저장 시 순서 유지x; 중복 키 허용x + 중복 값 허용
 	 *  e.g. HashMap, HashTable, TreeMap, Properties 등
-	 * -> 용도에 따라 장단점(?) 다름; 개념적으로 어려워서 공부하기 어렵겠지만, 위 예시들 다 개별적으로 공부하기 -> 예시 면접 질문: HashTable 만들어보세요(수행에 10분 정도 소요)
+	 * -> 용도에 따라 장단점 다름; 개념적으로 어려워서 공부하기 어렵겠지만, 위 예시들 다 개별적으로 공부하기 -> 예시 면접 질문: HashTable 만들어보세요(수행에 10분 정도 소요)
 	 */
 
 	public static void main(String[] args) {
@@ -52,7 +52,7 @@ public class ListRun {
 		 * 2. 크기 지정해서 ArrayList 생성 -> 크기의 범위를 벗어날 경우 자동으로 크기가 늘어남
 		 * ArrayList 객체이름 = new ArrayList(크기);
 		 */
-		
+
 		/* ArrayList 자료형에 대해 ctrl + 클릭해서 상세 설명 보기
 		 * 추상클래스 AbstractList 상속받음 + public class ArrayList<E> extends AbstractList<E>
         implements List<E>, RandomAccess, Cloneable, java.io.Serializable구현함

@@ -33,11 +33,11 @@ public class WrapperRun {
 		// System.out.println(num1.equals(num2)); // equals() 메소드 = Object클래스의 것; 객체들의 주소값을 비교해서 같으면 true, 다르면 false return
 		// 모든 클래스는 Object클래스를 상속받고 있기 때문에 모든 클래스는 equals() 메소드를 상속받고 있음/사용 가능
 		
-		// 객체 생성으로 변환하는 방법(제목이 이게 맞나?)
+		// 객체 생성으로 변환하는 방법
 		// Integer i1 = new Integer(num1); // 방법1) 생성자 사용 -> "The constructor Integer(int) is deprecated(유지보수가 중단되어, 사용이 권장되지 않는)"; 지금(Amazon에서 다운받은 Java Development Kit 8)은 사용 가능하나, 조금 지나면 못 쓰게 될 거니까 사용 권장하지 않는 방법임 (-> 다른 방법 사용 권장); 이런 경고가 있었음을 개발자가 알고 있어야 함
 		// 지역변수 i1에 노란줄 = 사용 안 하는데 왜 선언했는지 경고문 보내줌; "The value of the local variable i1 is not used"
 		
-		// 방법2) Wrapper 클래스로 변환하여 사용: 기본자료형을 Wrapper 클래스 자료형에 대입(?)(auto boxing)
+		// 방법2) Wrapper 클래스로 변환하여 사용: 기본자료형을 Wrapper 클래스 자료형에 대입(auto boxing)
 		Integer i1 = num1;
 		Integer i2 = num2;
 		// int num5 = i1.intValue(); // 원래는 이렇게 (Wrapper 클래스로?) 변환해야 하는데, 귀찮으니까 윗줄처럼 간편하게 쓰자

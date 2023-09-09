@@ -1,9 +1,9 @@
-package com.kh.second.run;
+package src.com.kh.second.run;
 
 // 다른 클래스에 있는 메소드를 호출(call) 시
-import com.kh.second.MethodTest; // step1) import문: (같은 프로젝트 내) 해당 패키지(위치)에 있는 다른 클래스를 가져다 씀; "import 위치.클래스명;"으로 씀
+import src.com.kh.second.MethodTest; // step1) import문: (같은 프로젝트 내) 해당 패키지(위치)에 있는 다른 클래스를 가져다 씀; "import 위치.클래스명;"으로 씀
 								 // . 참조연산자(하위 위치 의미)
-import com.kh.first.HelloWorld;
+import src.com.kh.first.HelloWorld;
 
 public class Run { // 클래스 Run 영역 시작
 	public static void main(String[] args) { // main() 메서드 영역 시작

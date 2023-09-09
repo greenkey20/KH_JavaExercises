@@ -1,4 +1,4 @@
-package com.kh.chap01_beforeVSafter.before.model.vo;
+package src.com.kh.chap01_beforeVSafter.before.model.vo;
 
 public class Desktop {
 	

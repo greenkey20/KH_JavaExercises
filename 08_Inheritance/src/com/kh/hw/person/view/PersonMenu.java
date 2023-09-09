@@ -1,4 +1,4 @@
-package com.kh.hw.person.view;
+package src.com.kh.hw.person.view;
 
 import java.util.Scanner;
 

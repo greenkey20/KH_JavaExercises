@@ -1,6 +1,6 @@
-package com.kh.hw.person.controller;
+package src.com.kh.hw.person.controller;
 
-import com.kh.hw.person.model.vo.*;
+import src.com.kh.hw.person.model.vo.*;
 
 public class PersonController {
 	

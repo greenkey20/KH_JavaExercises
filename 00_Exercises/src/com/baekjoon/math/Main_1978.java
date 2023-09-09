@@ -66,7 +66,6 @@ public class Main_1978 {
 	
 	// 2022.6.15(수) 23h35
 	public static int[] getAllPrimeNumbers(int input) {
-		
+		return null;
 	}
-
 }

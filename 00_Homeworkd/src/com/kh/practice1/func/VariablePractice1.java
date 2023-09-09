@@ -1,4 +1,4 @@
-package com.kh.practice1.func;
+package src.com.kh.practice1.func;
 
 import java.util.Scanner; // java.util 라이브러리의 Scanner 클래스 사용할 수 있도록 불러옴
 

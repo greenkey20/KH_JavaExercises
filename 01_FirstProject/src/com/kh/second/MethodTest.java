@@ -1,4 +1,4 @@
-package com.kh.second;
+package src.com.kh.second;
 
 public class MethodTest { //MethodTest라는 클래스 영역 시작
 	

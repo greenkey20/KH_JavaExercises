@@ -1,4 +1,4 @@
-package com.kh.variable;
+package src.com.kh.variable;
 
 public class A_Variable {
 	// 변수의 필요성

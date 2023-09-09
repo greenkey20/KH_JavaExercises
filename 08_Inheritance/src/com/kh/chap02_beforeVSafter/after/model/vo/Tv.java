@@ -1,4 +1,4 @@
-package com.kh.chap02_beforeVSafter.after.model.vo;
+package src.com.kh.chap02_beforeVSafter.after.model.vo;
 
 public class Tv extends Product { // 상속을 받을 클래스(Tv)에서 누구로부터(Product) 상속받는지 명시; 키워드 extends(확장하다) 이용
 	

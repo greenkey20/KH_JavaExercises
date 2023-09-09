@@ -1,4 +1,4 @@
-package com.kh.hw.person.model.vo;
+package src.com.kh.hw.person.model.vo;
 
 public class Student extends Person {
 	

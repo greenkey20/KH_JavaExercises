@@ -1,6 +1,6 @@
-package com.kh.chap01_beforeVSafter.before.run;
+package src.com.kh.chap01_beforeVSafter.before.run;
 
-import com.kh.chap01_beforeVSafter.before.model.vo.*; // 이 패키지에 있는 모든 클래스 불러와서 사용 = *
+import src.com.kh.chap01_beforeVSafter.before.model.vo.*;
 
 public class BeforeRun {
 

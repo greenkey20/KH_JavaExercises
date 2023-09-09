@@ -1,4 +1,4 @@
-package com.kh.practice1.run;
+package src.com.kh.practice1.run;
 
 import com.kh.practice1.func.VariablePractice1; // main 메서드에서 접근할 클래스의 경로를 써서 불러옴
 

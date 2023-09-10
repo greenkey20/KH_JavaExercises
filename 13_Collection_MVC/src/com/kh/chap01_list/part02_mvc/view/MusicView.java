@@ -1,10 +1,10 @@
-package com.kh.chap01_list.part02_mvc.view;
+package src.com.kh.chap01_list.part02_mvc.view;
+
+import src.com.kh.chap01_list.part02_mvc.controller.MusicController;
+import src.com.kh.chap01_list.part02_mvc.model.vo.Music;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import com.kh.chap01_list.part02_mvc.controller.MusicController;
-import com.kh.chap01_list.part02_mvc.model.vo.Music;
 
 public class MusicView { // 사용자가 보는 화면 처리/시각적인 요소 + 입력, 출력
 	

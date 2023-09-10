@@ -1,5 +1,5 @@
 // 2021.11.19(금) 9h
-package com.kh.chap02_set.part01_hashSet.model.vo;
+package src.com.kh.chap02_set.part01_hashSet.model.vo;
 
 public class Student {
 	

@@ -1,4 +1,4 @@
-package com.kh.chap01_list.part02_mvc.model.vo;
+package src.com.kh.chap01_list.part02_mvc.model.vo;
 
 public class Music { // 값을 담을 vo 클래스; 한 번 만들어놓으면 더 건들일 일 없으므로, 먼저 빠르게 만들기(shift + alt + s -> 자동 완성)
 	

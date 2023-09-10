@@ -13,7 +13,7 @@ public class ListRun {
 	/* 컬렉션(collection): [사전적 의미] 모음, 수집 -> [Java] 자료구조가 내장되어있는 클래스; Java에서 제공하는 자료구조를 담당하는 프레임워크 -> 데이터가 새롭게 추가/삭제/수정되는 기능(알고리즘)들이 이미 정의되어있는 tool
 	 * 
 	 * 자료구조: 데이터를 효율적으로 다룰 때(자료/데이터를 다루다 = 데이터 조회, 정렬, 추가, 수정, 삭제) 필요한 개념 -> 데이터 관리가 수월해짐
-	 * frame(틀)work(작업): 효율적인 기능들이 이미 정의되어 있는 tool
+	 * frame(틀)work(작업): 효율적인 기능들이 이미 정의되어 있는 tool/틀?
 	 * 
 	 * 다량의 데이터를 관리하고자 할 때 지금까지는 배열로 충분히 활용이 가능했음 vs 배열의 단점/불편한 점/한계
 	 * 
@@ -37,7 +37,7 @@ public class ListRun {
 	 * List 계열: 담고자 하는 값(value)만 저장; 저장 시 순서 유지(index 있음); 중복 값 허용
 	 *  e.g. ArrayList(가장 많이 쓰임), LinkedList, Vector, Stack 등
 	 * Set 계열: 담고자 하는 값(value)만 저장; 저장 시 순서 유지x; 중복 값 허용x
-	 *  e.g. HashSet, TreeSet 등
+	 *  e.g. HashSet, LinkedSet, TreeSet 등
 	 * Map 계열: 키(key) + 값(value) 세트로 저장; 저장 시 순서 유지x; 중복 키 허용x + 중복 값 허용
 	 *  e.g. HashMap, HashTable, TreeMap, Properties 등
 	 * -> 용도에 따라 장단점 다름; 개념적으로 어려워서 공부하기 어렵겠지만, 위 예시들 다 개별적으로 공부하기 -> 예시 면접 질문: HashTable 만들어보세요(수행에 10분 정도 소요)

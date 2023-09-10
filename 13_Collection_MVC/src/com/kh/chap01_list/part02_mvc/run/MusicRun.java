@@ -1,6 +1,6 @@
-package com.kh.chap01_list.part02_mvc.run;
+package src.com.kh.chap01_list.part02_mvc.run;
 
-import com.kh.chap01_list.part02_mvc.view.MusicView;
+import src.com.kh.chap01_list.part02_mvc.view.MusicView;
 
 public class MusicRun {
 	

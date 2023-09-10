@@ -1,5 +1,5 @@
 // 2021.11.19(금) 12h
-package com.kh.chap03_map.part01_hashMap.model.vo;
+package src.com.kh.chap03_map.part01_hashMap.model.vo;
 
 public class Burger {
 	

@@ -1,11 +1,11 @@
 // 2021.11.19(금) 9h
-package com.kh.chap02_set.part01_hashSet.run;
+package src.com.kh.chap02_set.part01_hashSet.run;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 
-import com.kh.chap02_set.part01_hashSet.model.vo.Student;
+import src.com.kh.chap02_set.part01_hashSet.model.vo.Student;
 
 public class HashRun {
 
@@ -33,7 +33,7 @@ public class HashRun {
 		hs.add(new String("반갑습니다"));
 		hs.add(new String("반갑습니다"));
 		hs.add("반갑습니다");
-		// 1. String클래스는 equals 메소드가 오버라이딩 되어있음 -> 주소값(x) 문자열 값(O) 비교 -> equals()에 의해 같은 객체로 판단 
+		// 1. String클래스는 equals 메소드가 오버라이딩 되어있음 -> 주소값(x) 문자열 값(O) 비교 -> equals()에 의해 같은 객체로 판단
 		// 2. String클래스는 문자열을 가지고 해시코드를 만듦 -> hashcode()로도 같은 객체로 판단
 		// 위 "반갑습니다"는 동일한 객체로 인식됨
 		// 나의 질문 = HashSet에서 동일 객체를 판단하는 데에 string pool과는 어떤 연관이 있/없나?
@@ -83,7 +83,7 @@ public class HashRun {
 		 * hash알고리즘이 쓰이는 곳은 많지만, Java에 한정해서 설명해보자면..
 		 * 1. 해시코드가 같으면(e.g. 3, 3) 반드시 같은 주소값인가?
 		 * 나의 생각 = 해싱 알고리즘에 따라(?) 다른 객체인데 같은 해시코드를 가질 수 있다 -> X -> correct: 해시코드가 같아도 반드시 같은 주소값은 아님
-		 * 만약 내가 생성한 객체가 44억개라면 44억개의 주소값 vs hashCode()의 반환형이 4bytes이기 때문에 43억개 정도의 해시코드만 생성이 가능한 바, 해시코드가 같더라도 다른 객체일 경우가 있음(hash 충돌(collision?))
+		 * 만약 내가 생성한 객체가 44억개라면 44억개의 주소값 vs hashCode()의 반환형이 4bytes이기 때문에 43억개 정도의 해시코드만 생성이 가능한 바, 해시코드가 같더라도 다른 객체일 경우가 있음(hash 충돌/collision)
 		 * 
 		 * 2. 해시코드가 다르면(e.g. 3, 4) 반드시 다른 주소값인가?
 		 * 나의 생각 = 일단 해시코드가 다르면 다른 객체이다 -> O -> correct: 해시코드가 다르면 반드시 다른 주소값임
@@ -97,7 +97,8 @@ public class HashRun {
 		 * 목적/용도/상황에 따라 나만의 equals(), hashCode() 
 		 */
 		
-		// API 가서 Object클래스 들여다보기 -> Object클래스에는 7개의 메소드가 있다?
+		// API 가서 Object클래스 들여다보기 -> Object클래스에는 7개의 메소드가 있다
+		Object o;
 		
 		// HashSet에 들어있는 모든 값들을 출력하는 방법
 		System.out.println("----------------------");
@@ -105,7 +106,7 @@ public class HashRun {
 		for (Student s : stds) { // 제네릭 사용 -> 강제 형 변환할 필요 없음
 			System.out.println(s);
 		}
-		
+
 		// 2. HashSet의 내용물을 ArrayList에 담아 인덱스를 이용하여 반복문 출력
 		// HashSet에 담길 때 순서가 보장이 안 되므로, ArrayList에 담길 때 담길 때도 순서가 랜덤이라고 보면 됨
 		System.out.println("----------------------");

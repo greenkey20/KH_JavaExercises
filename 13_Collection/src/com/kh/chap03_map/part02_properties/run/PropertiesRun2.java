@@ -1,5 +1,5 @@
 // 2021.11.19(금) 16h
-package com.kh.chap03_map.part02_properties.run;
+package src.com.kh.chap03_map.part02_properties.run;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -11,7 +11,7 @@ public class PropertiesRun2 {
 	public static void main(String[] args) {
 		
 		// .xml(확장자가 xml인 파일): 다양한 프로그래밍 언어 간 호환성이 좋음
-		// 나중에 css 배울 때쯤(?) 중요해짐
+		// 나중에 css 배울 때쯤 중요해짐
 		
 		Properties prop = new Properties();
 		
@@ -19,8 +19,8 @@ public class PropertiesRun2 {
 		prop.setProperty("Set", "HashSet");
 		prop.setProperty("Set2", "HashSet");
 		
-		System.out.println(prop); // {Set=HashSet, List=ArrayList}
-		System.out.println(prop.getProperty("Set")); // ArrayList
+		System.out.println(prop); // {Set2=HashSet, List=ArrayList, Set=HashSet}
+		System.out.println(prop.getProperty("Set")); // HashSet
 		
 		Properties inputXml = new Properties();
 		
@@ -42,8 +42,7 @@ public class PropertiesRun2 {
 			// loadToXML(InputStream is) -> 불러오기
 			System.out.println("여기서부터는 xml의 내용을 Eclipse에 입력받은 내용");
 			inputXml.load(new FileInputStream("test.xml")); // {SET=HashSet, List=ArrayList, Map=Properties}
-			System.out.println(inputXml); // 읽어온 것을 찍어/출력해보기 -> 요소가 1개만 출력됨; 강사님 설명 = xml파일 내용 중 'entry key='로 key가 중복되어 다 덮어쓰기된 것 같음
-			
+			System.out.println(inputXml); // 읽어온 것을 찍어/출력해보기 -> 요소가 1개만 출력됨; 강사님 설명 = xml파일 내용 중 'entry key='로 key가 중복되어 다 덮어쓰기된 것 같음 <- {<properties>=, <!DOCTYPE=properties SYSTEM "http://java.sun.com/dtd/properties.dtd">, <entry=key="Set">HashSet</entry>, <comment>hej=^^</comment>, </properties>=, <?xml=version="1.0" encoding="UTF-8" standalone="no"?>}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

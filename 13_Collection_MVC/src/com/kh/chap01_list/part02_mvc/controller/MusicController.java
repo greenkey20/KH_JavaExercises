@@ -1,15 +1,15 @@
-package com.kh.chap01_list.part02_mvc.controller;
+package src.com.kh.chap01_list.part02_mvc.controller;
+
+import src.com.kh.chap01_list.part02_mvc.model.vo.Music;
 
 import java.util.ArrayList;
-
-import com.kh.chap01_list.part02_mvc.model.vo.Music;
 
 public class MusicController { // 사용자가 화면을 통해/View에서 요청한 것을 받아서 처리 -> 처리 결과를 View로 반환
 	
 	// 음악 리스트 만들어놓고, 그 리스트에 추가, 검색, 삭제, 수정 등의 처리를 하고자 함
 	
 	// [필드부]
-	// 음악 리스트 생성; Music자료형만 담을 것이므로 제네릭 설정(?)
+	// 음악 리스트 생성; Music자료형만 담을 것이므로 제네릭 설정
 	private ArrayList<Music> list = new ArrayList<>();
 	// 나의 질문 = 이번에는 참조자료형 List 대신  ArrayList 사용해보는 것인가요?
 	{ // 초기화 블록 = 객체 생성 시 무조건 수행되는 블록
